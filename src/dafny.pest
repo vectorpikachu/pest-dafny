@@ -1,0 +1,126 @@
+
+// Character Classes
+letter = _{ ASCII_ALPHA }
+digit = _{ ASCII_DIGIT }
+posDigit = _{ '1'..'9' }
+posDigitFrom2 = _{ '2'..'9' }
+hexdigit = _{ digit | 'a'..'f' | 'A'..'F' }
+special = _{ "\'" | "_" | "?" }
+
+cr = _{ "\r" }
+lf = _{ "\n" }
+tab = _{ "\t" }
+space = _{ " " }
+WHITESPACE = _{ space | tab | cr | lf }
+
+COMMENT = _{ "//" ~ (!lf ~ ANY)* ~ lf | "/*" ~ (!("*/") ~ ANY)* ~ "*/" }
+
+nondigitIdChar = _{ letter | special }
+idchar = _{ nondigitIdChar | digit }
+nonidchar = _{ !idchar ~ ANY }
+
+charChar = _{ !("\'" | "\\" | cr | lf ) ~ ANY }
+stringChar = _{ !("\"" | "\\" | cr | lf ) ~ ANY }
+verbatimStringChar = _{ !("\"") ~ ANY }
+
+arrayToken = _{ "array" ~ (posDigitFrom2 | posDigit ~ digit ~ digit*)? ~ ("?")? }
+bvToken = _{ "bv" ~ ("0" | posDigit ~ digit*) }
+reservedword = _{ "abstract"| "allocated"| "as"| "assert"| "assume"|
+  "bool"| "break"| "by"| 
+  "calc"| "case"| "char"| "class"| "codatatype"|
+  "colemma"| "const"| "constructor"| "copredicate"| 
+  "datatype"| "decreases"|
+  "else"| "ensures"| "exists"| "export"| "extends"|
+  "false"| "forall"| "fresh"| "function"| "ghost"|
+  "if"| "imap"| "import"| "in"| "include"| "inductive"|
+  "int"| "invariant"| "is"| "iset"| "iterator"|
+  "label"| "lemma"| "map"| "match"| "method"|
+  "modifies"| "modify"| "module"| "multiset"| 
+  "nameonly"| "nat"| "new"| "newtype"| "null"|
+  "object"| "object?"| "old"| "opened"| "ORDINAL"|
+  "predicate"| "print"| "provides"|
+  "reads"| "real"| "refines"| "requires"| "return"|
+  "returns"| "reveal"| "reveals"|
+  "seq"| "set"| "static"| "string"| 
+  "then"| "this"| "trait"| "true"| "twostate"| "type"|
+  "unchanged"| "var"| "while"| "witness"|
+  "yield"| "yields" | arrayToken | bvToken }
+
+ident = _{ !(charToken | reservedword) ~ nondigitIdChar ~ idchar* }
+
+digits = _{ digit ~ ("_"? ~ digit )* }
+hexdigits = _{ "0x" ~ hexdigit ~ ("_"? ~ hexdigit )* }
+decimaldigits = _{ digit ~ ("_"? ~ digit )* ~ "." ~ digit ~ ("_"? ~ digit )* }
+
+escapedChar = _{ "\\\'" | "\\\"" | "\\\\" | "\\0" | "\\n" | "\\r" | "\\t" 
+    | "\\u" ~ hexdigit{4} }
+
+charToken = _{ "\'" ~ (charChar | escapedChar) ~ "\'" }
+stringToken = _{
+    ("\"" ~ (stringChar | escapedChar)* ~ "\"" )
+    | ("@" ~ "\"" ~ (verbatimStringChar | "\'" ~ "\"")* ~ "\"" )
+}
+
+ellipsis = _{ "..." }
+
+Ident = @{ ident }
+DotSuffix = @{ ident | digits | "requires" | "reads" }
+NoUSIdent = @{ !("_" ~ idchar*) ~ ident }
+WildIdent = @{ NoUSIdent | "_" }
+
+IdentOrDigits = @{ Ident | digits }
+NoUSIdentOrDigits = @{ NoUSIdent | digits }
+ModuleName = @{ NoUSIdent }
+ClassName = @{ NoUSIdent }
+DatatypeName = @{ NoUSIdent }
+DatatypeMemberName = @{ NoUSIdentOrDigits }
+NewtypeName = @{ NoUSIdent }
+SynonymName = @{ NoUSIdent }
+IteratorName = @{ NoUSIdent }
+TypeVariableName = @{ NoUSIdent }
+MethodFunctionName = @{ NoUSIdentOrDigits }
+LabelName = @{ NoUSIdentOrDigits }
+AttributeName = @{ NoUSIdent }
+ExportId = @{ NoUSIdentOrDigits }
+TypeNameOrCtorSuffix = @{ NoUSIdentOrDigits }
+
+QualifiedModuleName = @{ ModuleName ~ ("." ~ ModuleName)* }
+
+
+// TODO: After adding Type
+// IdentType = { WildIdent ~ ":" ~ Type }
+
+Nat = { digits | hexdigits }
+Dec = { decimaldigits }
+
+// Programs
+Dafny = { IncludeDirective_* ~ TopDecl ~ EOI }
+IncludeDirective_ = _{ "include" ~ stringToken }
+TopDecl = {
+    DeclModifier* ~ 
+    (
+        SubModuleDecl
+/*        | ClassDecl
+        | DatatypeDecl
+        | NewtypeDecl
+        | SynonymTypeDecl
+        | IteratorDecl
+        | TraitDecl
+        | ClassMemberDecl */
+    )
+}
+
+DeclModifier = { "abstract" | "ghost" | "static" }
+
+SubModuleDecl = { ModuleDefinition
+    //| ModuleImport
+    //| ModuleExport
+}
+
+ModuleDefinition = { "module" /* ~ Attribute* */
+    ~ ModuleQualifiedName
+    ~ ("refines" ~ ModuleQualifiedName)?
+    ~ "{" ~ TopDecl* ~ "}"
+}
+
+ModuleQualifiedName = { ModuleName ~ ("." ~ ModuleName)* }
