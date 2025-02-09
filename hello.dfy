@@ -1,9 +1,13 @@
-include "hello.dfy"
+class Node {
+    var head: int
+    var l: seq<int>
+}
 
-abstract module {:Attribute1 * ==> * :} AModule {
-    /*
-     * This is a comment
-     */
-    import opened A
-    export  provides *
+class Program {
+    var l: seq<Node>
+    method foo(x: int) returns (y: int)
+      ensures y == x + 1
+    {
+        return x + 1;
+    }
 }

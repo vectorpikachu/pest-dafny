@@ -1,0 +1,1040 @@
+[
+    Pair {
+        rule: Dafny,
+        span: Span {
+            str: "class Node {\r\n    var head: int\r\n    var l: seq<int>\r\n}\r\n\r\nclass Program {\r\n    var l: seq<Node>\r\n    method foo(x: int) returns (y: int)\r\n      ensures y == x + 1\r\n    {\r\n        return x + 1;\r\n    }\r\n}",
+            start: 0,
+            end: 203,
+        },
+        inner: [
+            Pair {
+                rule: TopDecl,
+                span: Span {
+                    str: "class Node {\r\n    var head: int\r\n    var l: seq<int>\r\n}",
+                    start: 0,
+                    end: 55,
+                },
+                inner: [
+                    Pair {
+                        rule: ClassDecl,
+                        span: Span {
+                            str: "class Node {\r\n    var head: int\r\n    var l: seq<int>\r\n}",
+                            start: 0,
+                            end: 55,
+                        },
+                        inner: [
+                            Pair {
+                                rule: ClassName,
+                                span: Span {
+                                    str: "Node",
+                                    start: 6,
+                                    end: 10,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: ClassMemberDecl,
+                                span: Span {
+                                    str: "var head: int\r\n    ",
+                                    start: 18,
+                                    end: 37,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: FieldDecl,
+                                        span: Span {
+                                            str: "var head: int\r\n    ",
+                                            start: 18,
+                                            end: 37,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: FIdentType,
+                                                span: Span {
+                                                    str: "head: int",
+                                                    start: 22,
+                                                    end: 31,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: NoUSIdentOrDigits,
+                                                        span: Span {
+                                                            str: "head",
+                                                            start: 22,
+                                                            end: 26,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: Type,
+                                                        span: Span {
+                                                            str: "int",
+                                                            start: 28,
+                                                            end: 31,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: ClassMemberDecl,
+                                span: Span {
+                                    str: "var l: seq<int>\r\n",
+                                    start: 37,
+                                    end: 54,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: FieldDecl,
+                                        span: Span {
+                                            str: "var l: seq<int>\r\n",
+                                            start: 37,
+                                            end: 54,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: FIdentType,
+                                                span: Span {
+                                                    str: "l: seq<int>",
+                                                    start: 41,
+                                                    end: 52,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: NoUSIdentOrDigits,
+                                                        span: Span {
+                                                            str: "l",
+                                                            start: 41,
+                                                            end: 42,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: Type,
+                                                        span: Span {
+                                                            str: "seq<int>",
+                                                            start: 44,
+                                                            end: 52,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: GenericInstantiation,
+                                                                span: Span {
+                                                                    str: "<int>",
+                                                                    start: 47,
+                                                                    end: 52,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: Type,
+                                                                        span: Span {
+                                                                            str: "int",
+                                                                            start: 48,
+                                                                            end: 51,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: TopDecl,
+                span: Span {
+                    str: "class Program {\r\n    var l: seq<Node>\r\n    method foo(x: int) returns (y: int)\r\n      ensures y == x + 1\r\n    {\r\n        return x + 1;\r\n    }\r\n}",
+                    start: 59,
+                    end: 203,
+                },
+                inner: [
+                    Pair {
+                        rule: ClassDecl,
+                        span: Span {
+                            str: "class Program {\r\n    var l: seq<Node>\r\n    method foo(x: int) returns (y: int)\r\n      ensures y == x + 1\r\n    {\r\n        return x + 1;\r\n    }\r\n}",
+                            start: 59,
+                            end: 203,
+                        },
+                        inner: [
+                            Pair {
+                                rule: ClassName,
+                                span: Span {
+                                    str: "Program",
+                                    start: 65,
+                                    end: 72,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: ClassMemberDecl,
+                                span: Span {
+                                    str: "var l: seq<Node>\r\n    ",
+                                    start: 80,
+                                    end: 102,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: FieldDecl,
+                                        span: Span {
+                                            str: "var l: seq<Node>\r\n    ",
+                                            start: 80,
+                                            end: 102,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: FIdentType,
+                                                span: Span {
+                                                    str: "l: seq<Node>",
+                                                    start: 84,
+                                                    end: 96,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: NoUSIdentOrDigits,
+                                                        span: Span {
+                                                            str: "l",
+                                                            start: 84,
+                                                            end: 85,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: Type,
+                                                        span: Span {
+                                                            str: "seq<Node>",
+                                                            start: 87,
+                                                            end: 96,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: GenericInstantiation,
+                                                                span: Span {
+                                                                    str: "<Node>",
+                                                                    start: 90,
+                                                                    end: 96,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: Type,
+                                                                        span: Span {
+                                                                            str: "Node",
+                                                                            start: 91,
+                                                                            end: 95,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: NamedType_,
+                                                                                span: Span {
+                                                                                    str: "Node",
+                                                                                    start: 91,
+                                                                                    end: 95,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: NameSegmentForTypeName,
+                                                                                        span: Span {
+                                                                                            str: "Node",
+                                                                                            start: 91,
+                                                                                            end: 95,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: Ident,
+                                                                                                span: Span {
+                                                                                                    str: "Node",
+                                                                                                    start: 91,
+                                                                                                    end: 95,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: ClassMemberDecl,
+                                span: Span {
+                                    str: "method foo(x: int) returns (y: int)\r\n      ensures y == x + 1\r\n    {\r\n        return x + 1;\r\n    }",
+                                    start: 102,
+                                    end: 200,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: MethodDecl,
+                                        span: Span {
+                                            str: "method foo(x: int) returns (y: int)\r\n      ensures y == x + 1\r\n    {\r\n        return x + 1;\r\n    }",
+                                            start: 102,
+                                            end: 200,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: MethodFunctionName,
+                                                span: Span {
+                                                    str: "foo",
+                                                    start: 109,
+                                                    end: 112,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: Formals,
+                                                span: Span {
+                                                    str: "(x: int)",
+                                                    start: 112,
+                                                    end: 120,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: GIdentType,
+                                                        span: Span {
+                                                            str: "x: int",
+                                                            start: 113,
+                                                            end: 119,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: IdentType,
+                                                                span: Span {
+                                                                    str: "x: int",
+                                                                    start: 113,
+                                                                    end: 119,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: WildIdent,
+                                                                        span: Span {
+                                                                            str: "x",
+                                                                            start: 113,
+                                                                            end: 114,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: Type,
+                                                                        span: Span {
+                                                                            str: "int",
+                                                                            start: 116,
+                                                                            end: 119,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: Formals,
+                                                span: Span {
+                                                    str: "(y: int)",
+                                                    start: 129,
+                                                    end: 137,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: GIdentType,
+                                                        span: Span {
+                                                            str: "y: int",
+                                                            start: 130,
+                                                            end: 136,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: IdentType,
+                                                                span: Span {
+                                                                    str: "y: int",
+                                                                    start: 130,
+                                                                    end: 136,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: WildIdent,
+                                                                        span: Span {
+                                                                            str: "y",
+                                                                            start: 130,
+                                                                            end: 131,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: Type,
+                                                                        span: Span {
+                                                                            str: "int",
+                                                                            start: 133,
+                                                                            end: 136,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: MethodSpec,
+                                                span: Span {
+                                                    str: "ensures y == x + 1\r\n    ",
+                                                    start: 145,
+                                                    end: 169,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: EnsuresClause,
+                                                        span: Span {
+                                                            str: "ensures y == x + 1\r\n    ",
+                                                            start: 145,
+                                                            end: 169,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: Expression,
+                                                                span: Span {
+                                                                    str: "y == x + 1\r\n    ",
+                                                                    start: 153,
+                                                                    end: 169,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: EquivExpression,
+                                                                        span: Span {
+                                                                            str: "y == x + 1\r\n    ",
+                                                                            start: 153,
+                                                                            end: 169,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: ImpliesExpression,
+                                                                                span: Span {
+                                                                                    str: "y == x + 1\r\n    ",
+                                                                                    start: 153,
+                                                                                    end: 169,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: LogicalExpression,
+                                                                                        span: Span {
+                                                                                            str: "y == x + 1\r\n    ",
+                                                                                            start: 153,
+                                                                                            end: 169,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: RelationalExpression,
+                                                                                                span: Span {
+                                                                                                    str: "y == x + 1\r\n    ",
+                                                                                                    start: 153,
+                                                                                                    end: 169,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: ShiftTerm,
+                                                                                                        span: Span {
+                                                                                                            str: "y ",
+                                                                                                            start: 153,
+                                                                                                            end: 155,
+                                                                                                        },
+                                                                                                        inner: [
+                                                                                                            Pair {
+                                                                                                                rule: Term,
+                                                                                                                span: Span {
+                                                                                                                    str: "y ",
+                                                                                                                    start: 153,
+                                                                                                                    end: 155,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: Factor,
+                                                                                                                        span: Span {
+                                                                                                                            str: "y ",
+                                                                                                                            start: 153,
+                                                                                                                            end: 155,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: BitvectorFactor,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "y ",
+                                                                                                                                    start: 153,
+                                                                                                                                    end: 155,
+                                                                                                                                },
+                                                                                                                                inner: [
+                                                                                                                                    Pair {
+                                                                                                                                        rule: AsExpression,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "y ",
+                                                                                                                                            start: 153,
+                                                                                                                                            end: 155,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: UnaryExpression,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "y ",
+                                                                                                                                                    start: 153,
+                                                                                                                                                    end: 155,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: PrimaryExpression,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "y ",
+                                                                                                                                                            start: 153,
+                                                                                                                                                            end: 155,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [
+                                                                                                                                                            Pair {
+                                                                                                                                                                rule: NameSegment,
+                                                                                                                                                                span: Span {
+                                                                                                                                                                    str: "y ",
+                                                                                                                                                                    start: 153,
+                                                                                                                                                                    end: 155,
+                                                                                                                                                                },
+                                                                                                                                                                inner: [
+                                                                                                                                                                    Pair {
+                                                                                                                                                                        rule: Ident,
+                                                                                                                                                                        span: Span {
+                                                                                                                                                                            str: "y",
+                                                                                                                                                                            start: 153,
+                                                                                                                                                                            end: 154,
+                                                                                                                                                                        },
+                                                                                                                                                                        inner: [],
+                                                                                                                                                                    },
+                                                                                                                                                                ],
+                                                                                                                                                            },
+                                                                                                                                                        ],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                        ],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: RelOp,
+                                                                                                        span: Span {
+                                                                                                            str: "== ",
+                                                                                                            start: 155,
+                                                                                                            end: 158,
+                                                                                                        },
+                                                                                                        inner: [],
+                                                                                                    },
+                                                                                                    Pair {
+                                                                                                        rule: ShiftTerm,
+                                                                                                        span: Span {
+                                                                                                            str: "x + 1\r\n    ",
+                                                                                                            start: 158,
+                                                                                                            end: 169,
+                                                                                                        },
+                                                                                                        inner: [
+                                                                                                            Pair {
+                                                                                                                rule: Term,
+                                                                                                                span: Span {
+                                                                                                                    str: "x + 1\r\n    ",
+                                                                                                                    start: 158,
+                                                                                                                    end: 169,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: Factor,
+                                                                                                                        span: Span {
+                                                                                                                            str: "x ",
+                                                                                                                            start: 158,
+                                                                                                                            end: 160,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: BitvectorFactor,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "x ",
+                                                                                                                                    start: 158,
+                                                                                                                                    end: 160,
+                                                                                                                                },
+                                                                                                                                inner: [
+                                                                                                                                    Pair {
+                                                                                                                                        rule: AsExpression,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "x ",
+                                                                                                                                            start: 158,
+                                                                                                                                            end: 160,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: UnaryExpression,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "x ",
+                                                                                                                                                    start: 158,
+                                                                                                                                                    end: 160,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: PrimaryExpression,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "x ",
+                                                                                                                                                            start: 158,
+                                                                                                                                                            end: 160,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [
+                                                                                                                                                            Pair {
+                                                                                                                                                                rule: NameSegment,
+                                                                                                                                                                span: Span {
+                                                                                                                                                                    str: "x ",
+                                                                                                                                                                    start: 158,
+                                                                                                                                                                    end: 160,
+                                                                                                                                                                },
+                                                                                                                                                                inner: [
+                                                                                                                                                                    Pair {
+                                                                                                                                                                        rule: Ident,
+                                                                                                                                                                        span: Span {
+                                                                                                                                                                            str: "x",
+                                                                                                                                                                            start: 158,
+                                                                                                                                                                            end: 159,
+                                                                                                                                                                        },
+                                                                                                                                                                        inner: [],
+                                                                                                                                                                    },
+                                                                                                                                                                ],
+                                                                                                                                                            },
+                                                                                                                                                        ],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                    Pair {
+                                                                                                                        rule: AddOp,
+                                                                                                                        span: Span {
+                                                                                                                            str: "+",
+                                                                                                                            start: 160,
+                                                                                                                            end: 161,
+                                                                                                                        },
+                                                                                                                        inner: [],
+                                                                                                                    },
+                                                                                                                    Pair {
+                                                                                                                        rule: Factor,
+                                                                                                                        span: Span {
+                                                                                                                            str: "1\r\n    ",
+                                                                                                                            start: 162,
+                                                                                                                            end: 169,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: BitvectorFactor,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "1\r\n    ",
+                                                                                                                                    start: 162,
+                                                                                                                                    end: 169,
+                                                                                                                                },
+                                                                                                                                inner: [
+                                                                                                                                    Pair {
+                                                                                                                                        rule: AsExpression,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "1\r\n    ",
+                                                                                                                                            start: 162,
+                                                                                                                                            end: 169,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: UnaryExpression,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "1\r\n    ",
+                                                                                                                                                    start: 162,
+                                                                                                                                                    end: 169,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: PrimaryExpression,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "1\r\n    ",
+                                                                                                                                                            start: 162,
+                                                                                                                                                            end: 169,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [
+                                                                                                                                                            Pair {
+                                                                                                                                                                rule: ConstAtomExpression,
+                                                                                                                                                                span: Span {
+                                                                                                                                                                    str: "1\r\n    ",
+                                                                                                                                                                    start: 162,
+                                                                                                                                                                    end: 169,
+                                                                                                                                                                },
+                                                                                                                                                                inner: [
+                                                                                                                                                                    Pair {
+                                                                                                                                                                        rule: LiteralExpression,
+                                                                                                                                                                        span: Span {
+                                                                                                                                                                            str: "1\r\n    ",
+                                                                                                                                                                            start: 162,
+                                                                                                                                                                            end: 169,
+                                                                                                                                                                        },
+                                                                                                                                                                        inner: [
+                                                                                                                                                                            Pair {
+                                                                                                                                                                                rule: Nat,
+                                                                                                                                                                                span: Span {
+                                                                                                                                                                                    str: "1\r\n    ",
+                                                                                                                                                                                    start: 162,
+                                                                                                                                                                                    end: 169,
+                                                                                                                                                                                },
+                                                                                                                                                                                inner: [],
+                                                                                                                                                                            },
+                                                                                                                                                                        ],
+                                                                                                                                                                    },
+                                                                                                                                                                ],
+                                                                                                                                                            },
+                                                                                                                                                        ],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: BlockStmt,
+                                                span: Span {
+                                                    str: "{\r\n        return x + 1;\r\n    }",
+                                                    start: 169,
+                                                    end: 200,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: Stmt,
+                                                        span: Span {
+                                                            str: "return x + 1;",
+                                                            start: 180,
+                                                            end: 193,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: NonLabeledStmt,
+                                                                span: Span {
+                                                                    str: "return x + 1;",
+                                                                    start: 180,
+                                                                    end: 193,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: ReturnStmt,
+                                                                        span: Span {
+                                                                            str: "return x + 1;",
+                                                                            start: 180,
+                                                                            end: 193,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: Rhs,
+                                                                                span: Span {
+                                                                                    str: "x + 1",
+                                                                                    start: 187,
+                                                                                    end: 192,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: Expression,
+                                                                                        span: Span {
+                                                                                            str: "x + 1",
+                                                                                            start: 187,
+                                                                                            end: 192,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: EquivExpression,
+                                                                                                span: Span {
+                                                                                                    str: "x + 1",
+                                                                                                    start: 187,
+                                                                                                    end: 192,
+                                                                                                },
+                                                                                                inner: [
+                                                                                                    Pair {
+                                                                                                        rule: ImpliesExpression,
+                                                                                                        span: Span {
+                                                                                                            str: "x + 1",
+                                                                                                            start: 187,
+                                                                                                            end: 192,
+                                                                                                        },
+                                                                                                        inner: [
+                                                                                                            Pair {
+                                                                                                                rule: LogicalExpression,
+                                                                                                                span: Span {
+                                                                                                                    str: "x + 1",
+                                                                                                                    start: 187,
+                                                                                                                    end: 192,
+                                                                                                                },
+                                                                                                                inner: [
+                                                                                                                    Pair {
+                                                                                                                        rule: RelationalExpression,
+                                                                                                                        span: Span {
+                                                                                                                            str: "x + 1",
+                                                                                                                            start: 187,
+                                                                                                                            end: 192,
+                                                                                                                        },
+                                                                                                                        inner: [
+                                                                                                                            Pair {
+                                                                                                                                rule: ShiftTerm,
+                                                                                                                                span: Span {
+                                                                                                                                    str: "x + 1",
+                                                                                                                                    start: 187,
+                                                                                                                                    end: 192,
+                                                                                                                                },
+                                                                                                                                inner: [
+                                                                                                                                    Pair {
+                                                                                                                                        rule: Term,
+                                                                                                                                        span: Span {
+                                                                                                                                            str: "x + 1",
+                                                                                                                                            start: 187,
+                                                                                                                                            end: 192,
+                                                                                                                                        },
+                                                                                                                                        inner: [
+                                                                                                                                            Pair {
+                                                                                                                                                rule: Factor,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "x ",
+                                                                                                                                                    start: 187,
+                                                                                                                                                    end: 189,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: BitvectorFactor,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "x ",
+                                                                                                                                                            start: 187,
+                                                                                                                                                            end: 189,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [
+                                                                                                                                                            Pair {
+                                                                                                                                                                rule: AsExpression,
+                                                                                                                                                                span: Span {
+                                                                                                                                                                    str: "x ",
+                                                                                                                                                                    start: 187,
+                                                                                                                                                                    end: 189,
+                                                                                                                                                                },
+                                                                                                                                                                inner: [
+                                                                                                                                                                    Pair {
+                                                                                                                                                                        rule: UnaryExpression,
+                                                                                                                                                                        span: Span {
+                                                                                                                                                                            str: "x ",
+                                                                                                                                                                            start: 187,
+                                                                                                                                                                            end: 189,
+                                                                                                                                                                        },
+                                                                                                                                                                        inner: [
+                                                                                                                                                                            Pair {
+                                                                                                                                                                                rule: PrimaryExpression,
+                                                                                                                                                                                span: Span {
+                                                                                                                                                                                    str: "x ",
+                                                                                                                                                                                    start: 187,
+                                                                                                                                                                                    end: 189,
+                                                                                                                                                                                },
+                                                                                                                                                                                inner: [
+                                                                                                                                                                                    Pair {
+                                                                                                                                                                                        rule: NameSegment,
+                                                                                                                                                                                        span: Span {
+                                                                                                                                                                                            str: "x ",
+                                                                                                                                                                                            start: 187,
+                                                                                                                                                                                            end: 189,
+                                                                                                                                                                                        },
+                                                                                                                                                                                        inner: [
+                                                                                                                                                                                            Pair {
+                                                                                                                                                                                                rule: Ident,
+                                                                                                                                                                                                span: Span {
+                                                                                                                                                                                                    str: "x",
+                                                                                                                                                                                                    start: 187,
+                                                                                                                                                                                                    end: 188,
+                                                                                                                                                                                                },
+                                                                                                                                                                                                inner: [],
+                                                                                                                                                                                            },
+                                                                                                                                                                                        ],
+                                                                                                                                                                                    },
+                                                                                                                                                                                ],
+                                                                                                                                                                            },
+                                                                                                                                                                        ],
+                                                                                                                                                                    },
+                                                                                                                                                                ],
+                                                                                                                                                            },
+                                                                                                                                                        ],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                            Pair {
+                                                                                                                                                rule: AddOp,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "+",
+                                                                                                                                                    start: 189,
+                                                                                                                                                    end: 190,
+                                                                                                                                                },
+                                                                                                                                                inner: [],
+                                                                                                                                            },
+                                                                                                                                            Pair {
+                                                                                                                                                rule: Factor,
+                                                                                                                                                span: Span {
+                                                                                                                                                    str: "1",
+                                                                                                                                                    start: 191,
+                                                                                                                                                    end: 192,
+                                                                                                                                                },
+                                                                                                                                                inner: [
+                                                                                                                                                    Pair {
+                                                                                                                                                        rule: BitvectorFactor,
+                                                                                                                                                        span: Span {
+                                                                                                                                                            str: "1",
+                                                                                                                                                            start: 191,
+                                                                                                                                                            end: 192,
+                                                                                                                                                        },
+                                                                                                                                                        inner: [
+                                                                                                                                                            Pair {
+                                                                                                                                                                rule: AsExpression,
+                                                                                                                                                                span: Span {
+                                                                                                                                                                    str: "1",
+                                                                                                                                                                    start: 191,
+                                                                                                                                                                    end: 192,
+                                                                                                                                                                },
+                                                                                                                                                                inner: [
+                                                                                                                                                                    Pair {
+                                                                                                                                                                        rule: UnaryExpression,
+                                                                                                                                                                        span: Span {
+                                                                                                                                                                            str: "1",
+                                                                                                                                                                            start: 191,
+                                                                                                                                                                            end: 192,
+                                                                                                                                                                        },
+                                                                                                                                                                        inner: [
+                                                                                                                                                                            Pair {
+                                                                                                                                                                                rule: PrimaryExpression,
+                                                                                                                                                                                span: Span {
+                                                                                                                                                                                    str: "1",
+                                                                                                                                                                                    start: 191,
+                                                                                                                                                                                    end: 192,
+                                                                                                                                                                                },
+                                                                                                                                                                                inner: [
+                                                                                                                                                                                    Pair {
+                                                                                                                                                                                        rule: ConstAtomExpression,
+                                                                                                                                                                                        span: Span {
+                                                                                                                                                                                            str: "1",
+                                                                                                                                                                                            start: 191,
+                                                                                                                                                                                            end: 192,
+                                                                                                                                                                                        },
+                                                                                                                                                                                        inner: [
+                                                                                                                                                                                            Pair {
+                                                                                                                                                                                                rule: LiteralExpression,
+                                                                                                                                                                                                span: Span {
+                                                                                                                                                                                                    str: "1",
+                                                                                                                                                                                                    start: 191,
+                                                                                                                                                                                                    end: 192,
+                                                                                                                                                                                                },
+                                                                                                                                                                                                inner: [
+                                                                                                                                                                                                    Pair {
+                                                                                                                                                                                                        rule: Nat,
+                                                                                                                                                                                                        span: Span {
+                                                                                                                                                                                                            str: "1",
+                                                                                                                                                                                                            start: 191,
+                                                                                                                                                                                                            end: 192,
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        inner: [],
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
+                                                                                                                                                                                        ],
+                                                                                                                                                                                    },
+                                                                                                                                                                                ],
+                                                                                                                                                                            },
+                                                                                                                                                                        ],
+                                                                                                                                                                    },
+                                                                                                                                                                ],
+                                                                                                                                                            },
+                                                                                                                                                        ],
+                                                                                                                                                    },
+                                                                                                                                                ],
+                                                                                                                                            },
+                                                                                                                                        ],
+                                                                                                                                    },
+                                                                                                                                ],
+                                                                                                                            },
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: EOI,
+                span: Span {
+                    str: "",
+                    start: 203,
+                    end: 203,
+                },
+                inner: [],
+            },
+        ],
+    },
+]

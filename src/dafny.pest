@@ -1,274 +1,308 @@
-
 // Character Classes
-letter = _{ ASCII_ALPHA }
-digit = _{ ASCII_DIGIT }
-posDigit = _{ '1'..'9' }
+letter        = _{ ASCII_ALPHA }
+digit         = _{ ASCII_DIGIT }
+posDigit      = _{ '1'..'9' }
 posDigitFrom2 = _{ '2'..'9' }
-hexdigit = _{ digit | 'a'..'f' | 'A'..'F' }
-special = _{ "\'" | "_" | "?" }
+hexdigit      = _{ digit | 'a'..'f' | 'A'..'F' }
+special       = _{ "\'" | "_" | "?" }
 
-cr = _{ "\r" }
-lf = _{ "\n" }
-tab = _{ "\t" }
-space = _{ " " }
+cr         = _{ "\r" }
+lf         = _{ "\n" }
+tab        = _{ "\t" }
+space      = _{ " " }
 WHITESPACE = _{ space | tab | cr | lf }
 
 COMMENT = _{ "//" ~ (!lf ~ ANY)* ~ lf | "/*" ~ (!("*/") ~ ANY)* ~ "*/" }
 
 nondigitIdChar = _{ letter | special }
-idchar = _{ nondigitIdChar | digit }
-nonidchar = _{ !idchar ~ ANY }
+idchar         = _{ nondigitIdChar | digit }
+// nonidchar      = _{ !idchar ~ ANY } !unused
 
-charChar = _{ !("\'" | "\\" | cr | lf ) ~ ANY }
-stringChar = _{ !("\"" | "\\" | cr | lf ) ~ ANY }
+charChar           = _{ !("\'" | "\\" | cr | lf) ~ ANY }
+stringChar         = _{ !("\"" | "\\" | cr | lf) ~ ANY }
 verbatimStringChar = _{ !("\"") ~ ANY }
 
-arrayToken = _{ "array" ~ (posDigitFrom2 | posDigit ~ digit ~ digit*)? ~ ("?")? }
-bvToken = _{ "bv" ~ ("0" | posDigit ~ digit*) }
-reservedword = _{ "abstract"| "allocated"| "as"| "assert"| "assume"|
-  "bool"| "break"| "by"| 
-  "calc"| "case"| "char"| "class"| "codatatype"|
-  "colemma"| "const"| "constructor"| "copredicate"| 
-  "datatype"| "decreases"|
-  "else"| "ensures"| "exists"| "export"| "extends"|
-  "false"| "forall"| "fresh"| "function"| "ghost"|
-  "if"| "imap"| "import"| "in"| "include"| "inductive"|
-  "int"| "invariant"| "is"| "iset"| "iterator"|
-  "label"| "lemma"| "map"| "match"| "method"|
-  "modifies"| "modify"| "module"| "multiset"| 
-  "nameonly"| "nat"| "new"| "newtype"| "null"|
-  "object"| "object?"| "old"| "opened"| "ORDINAL"|
-  "predicate"| "print"| "provides"|
-  "reads"| "real"| "refines"| "requires"| "return"|
-  "returns"| "reveal"| "reveals"|
-  "seq"| "set"| "static"| "string"| 
-  "then"| "this"| "trait"| "true"| "twostate"| "type"|
-  "unchanged"| "var"| "while"| "witness"|
-  "yield"| "yields" | arrayToken | bvToken }
+arrayToken   = _{ "array" ~ (posDigitFrom2 | posDigit ~ digit ~ digit*)? ~ ("?")? }
+bvToken      = _{ "bv" ~ ("0" | posDigit ~ digit*) }
+reservedword = _{
+    "abstract"
+  | "allocated"
+  | "as"
+  | "assert"
+  | "assume"
+  | "bool"
+  | "break"
+  | "by"
+  | "calc"
+  | "case"
+  | "char"
+  | "class"
+  | "codatatype"
+  | "colemma"
+  | "const"
+  | "constructor"
+  | "copredicate"
+  | "datatype"
+  | "decreases"
+  | "else"
+  | "ensures"
+  | "exists"
+  | "export"
+  | "extends"
+  | "false"
+  | "forall"
+  | "fresh"
+  | "function"
+  | "ghost"
+  | "if"
+  | "imap"
+  | "import"
+  | "in"
+  | "include"
+  | "inductive"
+  | "int"
+  | "invariant"
+  | "is"
+  | "iset"
+  | "iterator"
+  | "label"
+  | "lemma"
+  | "map"
+  | "match"
+  | "method"
+  | "modifies"
+  | "modify"
+  | "module"
+  | "multiset"
+  | "nameonly"
+  | "nat"
+  | "new"
+  | "newtype"
+  | "null"
+  | "object"
+  | "object?"
+  | "old"
+  | "opened"
+  | "ORDINAL"
+  | "predicate"
+  | "print"
+  | "provides"
+  | "reads"
+  | "real"
+  | "refines"
+  | "requires"
+  | "return"
+  | "returns"
+  | "reveal"
+  | "reveals"
+  | "seq"
+  | "set"
+  | "static"
+  | "string"
+  | "then"
+  | "this"
+  | "trait"
+  | "true"
+  | "twostate"
+  | "type"
+  | "unchanged"
+  | "var"
+  | "while"
+  | "witness"
+  | "yield"
+  | "yields"
+  | arrayToken
+  | bvToken
+}
 
 ident = _{ !(charToken | reservedword) ~ nondigitIdChar ~ idchar* }
 
-digits = _{ digit ~ ("_"? ~ digit )* }
-hexdigits = _{ "0x" ~ hexdigit ~ ("_"? ~ hexdigit )* }
-decimaldigits = _{ digit ~ ("_"? ~ digit )* ~ "." ~ digit ~ ("_"? ~ digit )* }
+digits        = _{ digit ~ ("_"? ~ digit)* }
+hexdigits     = _{ "0x" ~ hexdigit ~ ("_"? ~ hexdigit)* }
+decimaldigits = _{ digit ~ ("_"? ~ digit)* ~ "." ~ digit ~ ("_"? ~ digit)* }
 
-escapedChar = _{ "\\\'" | "\\\"" | "\\\\" | "\\0" | "\\n" | "\\r" | "\\t" 
-    | "\\u" ~ hexdigit{4} }
+escapedChar = _{
+    "\\\'"
+  | "\\\""
+  | "\\\\"
+  | "\\0"
+  | "\\n"
+  | "\\r"
+  | "\\t"
+  | "\\u" ~ hexdigit{4}
+}
 
-charToken = _{ "\'" ~ (charChar | escapedChar) ~ "\'" }
+charToken   = _{ "\'" ~ (charChar | escapedChar) ~ "\'" }
 stringToken = _{
-    ("\"" ~ (stringChar | escapedChar)* ~ "\"" )
-    | ("@" ~ "\"" ~ (verbatimStringChar | "\'" ~ "\"")* ~ "\"" )
+    ("\"" ~ (stringChar | escapedChar)* ~ "\"")
+  | ("@" ~ "\"" ~ (verbatimStringChar | "\'" ~ "\"")* ~ "\"")
 }
 
 ellipsis = { "..." }
 
-Ident = @{ ident }
+Ident     = @{ ident }
 DotSuffix = @{ ident | digits | "requires" | "reads" }
 NoUSIdent = @{ !("_" ~ idchar*) ~ ident }
 WildIdent = @{ NoUSIdent | "_" }
 
-IdentOrDigits = @{ Ident | digits }
-NoUSIdentOrDigits = @{ NoUSIdent | digits }
-ModuleName = @{ NoUSIdent }
-ClassName = @{ NoUSIdent }
-DatatypeName = @{ NoUSIdent }
-DatatypeMemberName = @{ NoUSIdentOrDigits }
-NewtypeName = @{ NoUSIdent }
-SynonymName = @{ NoUSIdent }
-IteratorName = @{ NoUSIdent }
-TypeVariableName = @{ NoUSIdent }
-MethodFunctionName = @{ NoUSIdentOrDigits }
-LabelName = @{ NoUSIdentOrDigits }
-AttributeName = @{ NoUSIdent }
-ExportId = @{ NoUSIdentOrDigits }
+IdentOrDigits        = @{ Ident | digits }
+NoUSIdentOrDigits    = @{ NoUSIdent | digits }
+ModuleName           = @{ NoUSIdent }
+ClassName            = @{ NoUSIdent }
+DatatypeName         = @{ NoUSIdent }
+DatatypeMemberName   = @{ NoUSIdentOrDigits }
+NewtypeName          = @{ NoUSIdent }
+// SynonymName          = @{ NoUSIdent } unused
+IteratorName         = @{ NoUSIdent }
+TypeVariableName     = @{ NoUSIdent }
+MethodFunctionName   = @{ NoUSIdentOrDigits }
+LabelName            = @{ NoUSIdentOrDigits }
+AttributeName        = @{ NoUSIdent }
+ExportId             = @{ NoUSIdentOrDigits }
 TypeNameOrCtorSuffix = @{ NoUSIdentOrDigits }
 
 QualifiedModuleName = @{ ModuleName ~ ("." ~ ModuleName)* }
 
-IdentType = { WildIdent ~ ":" ~ Type }
-FIdentType = { NoUSIdentOrDigits ~ ":" ~ Type }
-CIdentType = { NoUSIdentOrDigits ~ (":" ~ Type)? }
-GIdentType = {
-    ("ghost" | "new" | "nameonly")?
-    ~ IdentType
-    ~ (":=" ~ Expression)?
+IdentType              = { WildIdent ~ ":" ~ Type }
+FIdentType             = { NoUSIdentOrDigits ~ ":" ~ Type }
+CIdentType             = { NoUSIdentOrDigits ~ (":" ~ Type)? }
+GIdentType             = {
+    ("ghost" | "new" | "nameonly")? ~ IdentType ~ (":=" ~ Expression)?
 }
 LocalIdentTypeOptional = { WildIdent ~ (":" ~ Type)? }
-IdentTypeOptional = { WildIdent ~ (":" ~ Type)? }
-TypeIdentOptional = { 
-    ("ghost" | "nameonly")?
-    ~ (NoUSIdentOrDigits ~ ":")? ~ Type
-    ~ (":=" ~ Expression)?
+IdentTypeOptional      = { WildIdent ~ (":" ~ Type)? }
+TypeIdentOptional      = {
+    ("ghost" | "nameonly")? ~ (NoUSIdentOrDigits ~ ":")? ~ Type ~ (":=" ~ Expression)?
 }
-FormalsOptionalIds = {
-    "("
-    ~ (
-        TypeIdentOptional
-        ~ ("," ~ TypeIdentOptional)*
-    )?
-    ~ ")"
+FormalsOptionalIds     = {
+    "(" ~ (TypeIdentOptional ~ ("," ~ TypeIdentOptional)*)? ~ ")"
 }
 
 Nat = { digits | hexdigits }
 Dec = { decimaldigits }
 
 // Programs
-Dafny = { SOI ~ IncludeDirective_* ~ TopDecl* ~ EOI }
+Dafny             =  { SOI ~ IncludeDirective_* ~ TopDecl* ~ EOI }
 IncludeDirective_ = _{ "include" ~ stringToken }
-TopDecl = {
-    DeclModifier* ~ 
-    (
-        SubModuleDecl
-/*        | ClassDecl
-        | DatatypeDecl
-        | NewtypeDecl
-        | SynonymTypeDecl
-        | IteratorDecl
-        | TraitDecl
-        | ClassMemberDecl */
-    )
+TopDecl           =  {
+    DeclModifier* ~ (SubModuleDecl
+  | ClassDecl
+  | DatatypeDecl
+  | NewtypeDecl
+  | SynonymDecl // Doubt that the ref make a mistake, should be SynonymDecl
+  | IteratorDecl
+  | TraitDecl
+  | ClassMemberDecl
+  )
 }
 
 DeclModifier = @{ "abstract" | "ghost" | "static" }
 
-SubModuleDecl = { ModuleDefinition
-    | ModuleImport
-    | ModuleExport
+SubModuleDecl = {
+    ModuleDefinition
+  | ModuleImport
+  | ModuleExport
 }
 
-ModuleDefinition = { "module" ~ Attribute*
-    ~ ModuleQualifiedName
-    ~ ("refines" ~ ModuleQualifiedName)?
-    ~ "{" ~ TopDecl* ~ "}"
+ModuleDefinition    =  {
+    "module" ~ Attribute* ~ QualifiedModuleName ~ ("refines" ~ QualifiedModuleName)? ~ "{" ~ TopDecl* ~ "}"
 }
-ModuleQualifiedName = @{ ModuleName ~ ("." ~ ModuleName)* }
+
 
 // The ordered choice's order is important
 // If you put the A = B rule after QualifiedModuleExport, it will always match the first rule
-ModuleImport = { "import" ~ "opened"? ~ (
-    (ModuleName ~ "=" ~ QualifiedModuleExport)
-    | (ModuleName ~ ":" ~ QualifiedModuleExport)
-    | QualifiedModuleExport
-) }
-QualifiedModuleExport = { ModuleQualifiedName ~ ("`" ~ ModuleExportSuffix)? }
-ModuleExportSuffix = { ExportId | "{" ~ ExportId ~ ("," ~ ExportId)* ~ "}" }
+ModuleImport          = {
+    "import" ~ "opened"? ~ ((ModuleName ~ "=" ~ QualifiedModuleExport) | (ModuleName ~ ":" ~ QualifiedModuleExport) | QualifiedModuleExport)
+}
+QualifiedModuleExport = { QualifiedModuleName ~ ("`" ~ ModuleExportSuffix)? }
+ModuleExportSuffix    = { ExportId | "{" ~ ExportId ~ ("," ~ ExportId)* ~ "}" }
 
 ModuleExport = {
-    "export" ~ ExportId? ~ ellipsis? ~ (
-        ("provides" ~ (
-            (ExportSignature ~ ("," ~ ExportSignature)*) | "*"
-        ))
-        | ("reveals" ~ (
-                (ExportSignature ~ ("," ~ ExportSignature)*) | "*"
-            ))
-        | ("extends" ~ ExportId ~ ("," ~ ExportId)*)
-    )*
+    "export" ~ ExportId? ~ ellipsis? ~ (("provides" ~ ((ExportSignature ~ ("," ~ ExportSignature)*) | "*")) | ("reveals" ~ ((ExportSignature ~ ("," ~ ExportSignature)*) | "*")) | ("extends" ~ ExportId ~ ("," ~ ExportId)*))*
 }
-// TODO: Here
-ExportSignature = { MethodFunctionName }
+
+ExportSignature = { TypeNameOrCtorSuffix ~ ("." ~ TypeNameOrCtorSuffix)? }
 
 // Specifiaction Clauses
-RequiresClause = { "requires" ~ Attribute* ~ (LabelName ~ ":")? ~ Expression }
-EnsuresClause = { "ensures" ~ Attribute* ~ Expression }
-DecreasesClause = { "decreases" ~ Attribute* ~ DecreasesList }
-DecreasesList = {
-    PossiblyWildExpression
-    ~ ("," ~ PossiblyWildExpression)*
+RequiresClause              =  { "requires" ~ Attribute* ~ (LabelName ~ ":")? ~ Expression }
+EnsuresClause               =  { "ensures" ~ Attribute* ~ Expression }
+DecreasesClause             =  { "decreases" ~ Attribute* ~ DecreasesList }
+DecreasesList               =  {
+    PossiblyWildExpression ~ ("," ~ PossiblyWildExpression)*
 }
-PossiblyWildExpression = { "*" | Expression }
-FrameExpression = { Expression ~ FrameField? | FrameField }
-FrameField = { "`" ~ IdentOrDigits }
-PossiblyWildFrameExpression = { "*" | FrameExpression }
-ReadsClause = { "reads" ~ Attribute?
-    ~ PossiblyWildFrameExpression
-    ~ ("," ~ PossiblyWildFrameExpression)*
+PossiblyWildExpression      =  { "*" | Expression }
+FrameExpression             =  { Expression ~ FrameField? | FrameField }
+FrameField                  =  { "`" ~ IdentOrDigits }
+PossiblyWildFrameExpression =  { "*" | FrameExpression }
+ReadsClause                 =  {
+    "reads" ~ Attribute? ~ PossiblyWildFrameExpression ~ ("," ~ PossiblyWildFrameExpression)*
 }
-ModifiesClause = { "modifies" ~ Attribute? ~ FrameExpression ~ ("," ~ FrameExpression)* }
-InvariantClause_ = _{ "invariant" ~ Attribute* ~ Expression }
+ModifiesClause              =  { "modifies" ~ Attribute? ~ FrameExpression ~ ("," ~ FrameExpression)* }
+InvariantClause_            = _{ "invariant" ~ Attribute* ~ Expression }
 
-MethodSpec = { 
-    (
-        ModifiesClause
-        | RequiresClause
-        | EnsuresClause
-        | DecreasesClause
-    )*
- }
+MethodSpec = {
+    (ModifiesClause | RequiresClause | EnsuresClause | DecreasesClause)*
+}
 
 FucntionSpec = {
-    (
-        RequiresClause
-        | ReadsClause
-        | EnsuresClause
-        | DecreasesClause
-    )*
+    (RequiresClause | ReadsClause | EnsuresClause | DecreasesClause)*
 }
 
 LambdaSpec = {
-    (
-        ReadsClause
-        | RequiresClause
-    )*
+    (ReadsClause | RequiresClause)*
 }
 
 IteratorSpec = {
-    (
-        ReadsClause
-        | ModifiesClause
-        | "yields" ~ RequiresClause
-        | "yield" ~ EnsuresClause
-        | DecreasesClause
-    )*
+    (ReadsClause | ModifiesClause | "yields" ~ RequiresClause | "yield" ~ EnsuresClause | DecreasesClause)*
 }
 
 LoopSpec = {
-    (
-        InvariantClause_
-        | DecreasesClause
-        | ModifiesClause
-    )*
+    (InvariantClause_ | DecreasesClause | ModifiesClause)*
 }
 
 // Types
-Type = { DomainType_ | ArrowType_ }
-DomainType_ = { 
-    BoolType_ | CharType_ | IntType_ | RealType_
-    | OrdinalType_ | BitVectorType_ | ObjectType_
-    | FiniteSetType_ | InfiniteSetType_
-    | MultisetType_
-    | FiniteMapType_ | InfiniteMapType_
-    | SequenceType_
-    | NatType_
-    | StringType_
-    | ArrayType_
-    | TupleType_
-    | NamedType_
+Type        = { DomainType_ | ArrowType_ }
+DomainType_ = _{
+    BoolType_
+  | CharType_
+  | IntType_
+  | RealType_
+  | OrdinalType_
+  | BitVectorType_
+  | ObjectType_
+  | FiniteSetType_
+  | InfiniteSetType_
+  | MultisetType_
+  | FiniteMapType_
+  | InfiniteMapType_
+  | SequenceType_
+  | NatType_
+  | StringType_
+  | ArrayType_
+  | TupleType_
+  | NamedType_
 }
 
-NamedType_ = { NameSegmentForTypeName ~ ("." ~ NameSegmentForTypeName)* }
-NameSegmentForTypeName = { Ident ~ GenricInstantiation? }
+NamedType_             = { NameSegmentForTypeName ~ ("." ~ NameSegmentForTypeName)* }
+NameSegmentForTypeName = { Ident ~ GenericInstantiation? }
 
 // Basic Types
-BoolType_ = { "bool" }
-IntType_ = { "int" }
-RealType_ = { "real" }
-BitVectorType_ = { bvToken }
-OrdinalType_ = { "ORDINAL" }
-CharType_ = { "char" }
+BoolType_      = _{ "bool" }
+IntType_       = _{ "int" }
+RealType_      = _{ "real" }
+BitVectorType_ = _{ bvToken }
+OrdinalType_   = _{ "ORDINAL" }
+CharType_      = _{ "char" }
 
 // Type Parameters
-GenericParameters = {
-    "<" ~ Variance?
-    ~ TypeVariableName ~ TypeParameterCharacteristics*
-    ~ ("," ~ Variance? ~ TypeVariableName ~ TypeParameterCharacteristics*)*
-    ~ ">"
+GenericParameters            = {
+    "<" ~ Variance? ~ TypeVariableName ~ TypeParameterCharacteristics* ~ ("," ~ Variance? ~ TypeVariableName ~ TypeParameterCharacteristics*)* ~ ">"
 }
-Variance = { "*" | "+" | "!" | "-" }
+Variance                     = { "*" | "+" | "!" | "-" }
 TypeParameterCharacteristics = {
     "(" ~ TPCharOption ~ ("," ~ TPCharOption)* ~ ")"
 }
-TPCharOption = { "==" | "0" | "00" | "!" ~ "new" }
+TPCharOption                 = { "==" | "0" | "00" | "!" ~ "new" }
 
 // Genric Instantiation
 GenericInstantiation = {
@@ -276,221 +310,510 @@ GenericInstantiation = {
 }
 
 // Collection Types
-FiniteSetType_ = { "set" ~ GenericInstantiation? }
-InfiniteSetType_ = { "iset" ~ GenericInstantiation? }
-MultisetType_ = { "multiset" ~ GenericInstantiation? }
-SequenceType_ = { "seq" ~ GenericInstantiation? }
-StringType_ = { "string" } // is seq<char>
-FiniteMapType_ = { "map" ~ GenericInstantiation? }
-InfiniteMapType_ = { "imap" ~ GenericInstantiation? }
+FiniteSetType_   = _{ "set" ~ GenericInstantiation? }
+InfiniteSetType_ = _{ "iset" ~ GenericInstantiation? }
+MultisetType_    = _{ "multiset" ~ GenericInstantiation? }
+SequenceType_    = _{ "seq" ~ GenericInstantiation? }
+StringType_      = _{ "string" }
+// is seq<char>
+FiniteMapType_   = _{ "map" ~ GenericInstantiation? }
+InfiniteMapType_ = _{ "imap" ~ GenericInstantiation? }
 
 // Types that stand for other types
-SynonymDecl = { SynonymTypeDecl_ | OpaqueTypeDecl_ | SubsetTypeDecl_ }
-SynonymTypeName = @{ NoUSIdent }
-SynonymTypeDecl_ = {
-    "type" ~ Attribute* ~ SynonymTypeName
-    ~ TypeParameterCharacteristics*
-    ~ GenericParameters?
-    ~ "=" ~ Type
+SynonymDecl      =  { SynonymTypeDecl_ | OpaqueTypeDecl_ | SubsetTypeDecl_ }
+SynonymTypeName  = @{ NoUSIdent }
+SynonymTypeDecl_ =  _{
+    "type" ~ Attribute* ~ SynonymTypeName ~ TypeParameterCharacteristics* ~ GenericParameters? ~ "=" ~ Type
 }
-OpaqueTypeDecl_ = {
-    "type" ~ Attribute* ~ SynonymTypeName
-    ~ TypeParameterCharacteristics*
-    ~ GenericParameters?
-    ~ TypeMembers?
+OpaqueTypeDecl_  =  _{
+    "type" ~ Attribute* ~ SynonymTypeName ~ TypeParameterCharacteristics* ~ GenericParameters? ~ TypeMembers?
 }
-TypeMembers = {
-    "{" ~ (
-        DeclModifier* ~ ClassMemberDecl
-    )* ~ "}"
+TypeMembers      =  {
+    "{" ~ (DeclModifier* ~ ClassMemberDecl)* ~ "}"
 }
 
-SubsetTypeDecl_ = {
-    "type" ~ Attribute* ~ SynonymTypeName
-    ~ GenericParameters?
-    ~ "=" ~ LocalIdentTypeOptional
-    ~ "|" ~ Expression
-    ~ (
-        "ghost" ~ "witness" ~ Expression
-        | "witness" ~ Expression
-        | "witness" ~ "*"
-    )?
+SubsetTypeDecl_ = _{
+    "type" ~ Attribute* ~ SynonymTypeName ~ GenericParameters? ~ "=" ~ LocalIdentTypeOptional ~ "|" ~ Expression ~ ("ghost" ~ "witness" ~ Expression | "witness" ~ Expression | "witness" ~ "*")?
 }
-NatType_ = { "nat" }
+NatType_        = _{ "nat" }
 
 // Newtypes
 NewtypeDecl = {
-    "newtype" ~ Attribute* ~ NewtypeName ~ "="
-    ~ ellipsis? ~ (
-        LocalIdentTypeOptional ~ "|" ~ Expression
-        ~ (
-            "ghost" ~ "witness" ~ Expression
-            | "witness" ~ Expression
-            | "witness" ~ "*"
-        )?
-        | Type
-    ) ~ TypeMembers?
+    "newtype" ~ Attribute* ~ NewtypeName ~ "=" ~ ellipsis? ~ (LocalIdentTypeOptional ~ "|" ~ Expression ~ ("ghost" ~ "witness" ~ Expression | "witness" ~ Expression | "witness" ~ "*")? | Type) ~ TypeMembers?
 }
 
 // Class Types
-ClassDecl = {
-    "class" ~ Attribute* ~ ClassName
-    ~ GenericParameters?
-    ~ ("extends" ~ Type ~ ("," ~ Type)* | ellipsis)?
-    ~ "{" ~ (
-        DeclModifier* ~ ClassMemberDecl
-    )* ~ "}"
+ClassDecl         = {
+    "class" ~ Attribute* ~ ClassName ~ GenericParameters? ~ ("extends" ~ Type ~ ("," ~ Type)* | ellipsis)? ~ "{" ~ (DeclModifier* ~ ClassMemberDecl)* ~ "}"
 }
-ClassMemberDecl = {
+ClassMemberDecl   = {
     FieldDecl
-    | ConstantFieldDecl
-    | FunctionDecl
-    | MethodDecl
+  | ConstantFieldDecl
+  | FunctionDecl
+  | MethodDecl
 }
-FieldDecl = { 
-    "var" ~ Attribute* ~ FIdentType
-    ~ ("," ~ FIdentType)*
+FieldDecl         = {
+    "var" ~ Attribute* ~ FIdentType ~ ("," ~ FIdentType)*
 }
 ConstantFieldDecl = {
-    "const" ~ Attribute* ~ CIdentType ~ ellipsis?
-    ~ (":=" ~ Expression)?
+    "const" ~ Attribute* ~ CIdentType ~ ellipsis? ~ (":=" ~ Expression)?
 }
-MethodDecl = {
-    MethodKeyword_ ~ Attribute* ~ MethodFunctionName?
-    ~ (MethodSignature_ ~ ellipsis)
-    ~ MethodSpec
-    ~ BlockStmt?
+MethodDecl        = {
+    MethodKeyword_ ~ Attribute* ~ MethodFunctionName? ~ (MethodSignature_ | ellipsis) ~ MethodSpec ~ BlockStmt?
 }
-MethodKeyword_ = {
-    "method" | "constructor"
-    | "lemma" | "twostate" ~ "lemma"
-    | "least" ~ "lemma" | "greates" ~ "lemma"
+MethodKeyword_    = _{
+    "method"
+  | "constructor"
+  | "lemma"
+  | "twostate" ~ "lemma"
+  | "least" ~ "lemma"
+  | "greates" ~ "lemma"
 }
-MethodSignature_ = {
-    GenericParameters? 
-    ~ KType?
-    ~ Formals
-    ~ ("returns" ~ Formals)?
+MethodSignature_  = _{
+    GenericParameters? ~ KType? ~ Formals ~ ("returns" ~ Formals)?
 }
-KType = { "[" ~ ("nat" | "ORDINAL") ~ "]" }
-Formals = {
+KType             = { "[" ~ ("nat" | "ORDINAL") ~ "]" }
+Formals           = {
     "(" ~ (GIdentType ~ ("," ~ GIdentType)*)? ~ ")"
 }
 
 FunctionDecl = {
-    (
-        "twostate"? ~ "function" ~ "method"? ~ Attribute*
-            ~ MethodFunctionName
-            ~ FunctionSignatureOrEllipsis_
-        | "predicate" ~ "method"? ~ Attribute*
-            ~ MethodFunctionName
-            ~ PredicateSignatureOrEllipsis_
-        | ("least" | "greatest") ~ "predicate" ~ Attribute*
-            ~ MethodFunctionName
-            ~ PredicateSignatureOrEllipsis_
-    )
-    ~ FucntionSpec
-    ~ FunctionBody?
+    ("twostate"? ~ "function" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ FunctionSignatureOrEllipsis_ | "predicate" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_ | ("least" | "greatest") ~ "predicate" ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_) ~ FucntionSpec ~ FunctionBody?
 }
 
-FunctionSignatureOrEllipsis_ = {
-    FunctionSignature_ | ellipsis
+FunctionSignatureOrEllipsis_  = _{
+    FunctionSignature_
+  | ellipsis
 }
-FunctionSignature_ = {
-    GenericParameters?
-    ~ Formals
-    ~ ":"
-    ~ (
-        Type
-        | "(" ~ GIdentType ~ ")"
-    )
+FunctionSignature_            = _{
+    GenericParameters? ~ Formals ~ ":" ~ (Type | "(" ~ GIdentType ~ ")")
 }
-PredicateSignatureOrEllipsis_ = {
-    PredicateSignature_ | ellipsis
+PredicateSignatureOrEllipsis_ = _{
+    PredicateSignature_
+  | ellipsis
 }
-PredicateSignature_ = {
+PredicateSignature_           = _{
     GenericParameters? ~ KType? ~ Formals
 }
-FucntionBody = {
-    "{" ~ Expression ~ "}"
-    ~ ("by" ~ "method" ~ BlockStmt)?
+FunctionBody                  = {
+    "{" ~ Expression ~ "}" ~ ("by" ~ "method" ~ BlockStmt)?
 }
 
 // Trait Types
-TraitDecl = {
-    "trait" ~ Attribute* ~ ClassName
-    ~ ("extends" ~ Type ~ ("," ~ Type)* | ellipsis )?
-    ~ "{" ~ (
-        DeclModifier* ~ ClassMemberDecl
-    )* ~ "}"
+TraitDecl   = {
+    "trait" ~ Attribute* ~ ClassName ~ ("extends" ~ Type ~ ("," ~ Type)* | ellipsis)? ~ "{" ~ (DeclModifier* ~ ClassMemberDecl)* ~ "}"
 }
-ObjectType_ = { "object" | "object?" }
+ObjectType_ = _{ "object" | "object?" }
 
 // Array Types
-ArrayType_ = { arrayToken ~ GenericInstantiation? }
+ArrayType_ = _{ arrayToken ~ GenericInstantiation? }
 
 // Iterator Types
-// TODO: Here
+IteratorDecl = {
+    "iterator" ~ Attribute* ~ IteratorName ~ (GenericParameters? ~ Formals ~ ("yields" ~ Formals)? | ellipsis) ~ IteratorSpec ~ BlockStmt?
+}
+
+// Arrow Types
+ArrowType_ = _{
+    DomainType_ ~ "~>" ~ Type
+  | DomainType_ ~ "-->" ~ Type
+  | DomainType_ ~ "->" ~ Type
+}
+
+// Tuple Types
+TupleType_ = _{
+    "(" ~ ("ghost"? ~ Type ~ ("," ~ "ghost"? ~ Type)*)? ~ ")"
+}
+
+// Algebraic Types
+DatatypeDecl       = {
+    ("datatype" | "codatatype") ~ Attribute* ~ DatatypeName ~ GenericParameters? ~ "=" ~ ellipsis? ~ "|"? ~ DatatypeMemberDecl ~ ("|" ~ DatatypeMemberDecl)* ~ TypeMembers?
+}
+DatatypeMemberDecl = {
+    Attribute* ~ DatatypeMemberName ~ FormalsOptionalIds?
+}
+
+// Statements
+
+Stmt = { ("label" ~ LabelName ~ ":")* ~ NonLabeledStmt }
+
+NonLabeledStmt = {
+  BlockStmt
+  | BreakStmt
+  | CalcStmt
+  | ExpectStmt
+  | ForallStmt
+  | IfStmt
+  | MatchStmt
+  | ModifyStmt
+  | PrintStmt
+  | ReturnStmt
+  | RevealStmt
+  | SkeletonStmt
+  | UpdateStmt
+  | UpdateFailureStmt
+  | VarDeclStatement
+  | WhileStmt
+  | ForLoopStmt
+  | YieldStmt
+  | AssertStmt
+  | AssumeStmt
+}
+
+BreakStmt = {
+    "break" ~ LabelName ~ ";"
+  | "continue" ~ LabelName ~ ";"
+  | "break"+ ~ ";" // Change the break stmt from break* ~ break to break+
+  | "break"* ~ "continue" ~ ";"
+}
+
+BlockStmt = { "{" ~ Stmt* ~ "}" }
+
+ReturnStmt = { "return" ~ (Rhs ~ ("," ~ Rhs)*)? ~ ";" }
+
+YieldStmt = { "yield" ~ (Rhs ~ ("," ~ Rhs)*)? ~ ";" }
+
+UpdateStmt = {
+    Lhs ~ (Attribute* ~ ";" | ("," ~ Lhs)* ~ (":=" ~ Rhs ~ ("," ~ Rhs)* | ":|" ~ "assume"? ~ Expression) ~ ";")
+}
+
+UpdateFailureStmt = {
+    (Lhs ~ ("," ~ Lhs)*)? ~ ":-" ~ ("expect" | "assert" | "assume")? ~ Expression ~ ("," ~ Rhs)* ~ ";"
+}
+
+VarDeclStatement = {
+    "ghost"? ~ "var" ~ Attribute* ~ (LocalIdentTypeOptional ~ ("," ~ Attribute* ~ LocalIdentTypeOptional)* ~ (":=" ~ Rhs ~ ("," ~ Rhs)* | ":-" ~ ("expect" | "assert" | "assume")? ~ Expression ~ ("," ~ Rhs)* | Attribute* ~ ":|" ~ "assume"? ~ Expression)? | CasePatternLocal ~ (":=" | Attribute* ~ ":|") ~ Expression) ~ ";"
+}
+
+CasePatternLocal = {
+    Ident? ~ "(" ~ CasePatternLocal ~ ("," ~ CasePatternLocal)* ~ ")"
+  | LocalIdentTypeOptional
+}
+
+Guard = {
+    "*"
+  | "(" ~ "*" ~ ")"
+  | Expression
+}
+
+BindingGuard = {
+    IdentTypeOptional ~ ("," ~ IdentTypeOptional)* ~ Attribute* ~ ":|" ~ Expression
+}
+
+IfStmt = {
+    "if" ~ (AlternativeBlock | (BindingGuard | Guard | ellipsis) ~ BlockStmt ~ ("else" ~ (IfStmt | BlockStmt))?)
+}
+
+AlternativeBlock = {
+    "{" ~ AlternativeBlockCase* ~ "}"
+    | AlternativeBlockCase+ // It will never fail, make it failable
+}
+
+AlternativeBlockCase = {
+    "case" ~ (BindingGuard | Expression) ~ "=>" ~ Stmt* // To much repetition
+}
+
+WhileStmt = {
+    "while" ~ (LoopSpec ~ AlternativeBlock | (Guard | ellipsis) ~ LoopSpec ~ (BlockStmt | ellipsis)?)
+}
+
+ForLoopStmt = {
+    "for" ~ IdentTypeOptional ~ ":=" ~ Expression ~ ("to" | "downto") ~ (Expression | "*") ~ LoopSpec ~ BlockStmt?
+}
+
+MatchStmt = {
+    "match" ~ Expression ~ ("{" ~ CaseStmt* ~ "}" | CaseStmt*)
+}
+
+CaseStmt = { "case" ~ ExtendedPattern ~ "=>" ~ Stmt* }
+
+AssertStmt = {
+    "assert" ~ Attribute* ~ ((LabelName ~ ":")? ~ Expression ~ (";" | "by" ~ BlockStmt) | ellipsis ~ ";")
+}
+
+AssumeStmt = {
+    "assume" ~ Attribute* ~ (Expression | ellipsis) ~ ";"
+}
+
+ExpectStmt = {
+    "expect" ~ Attribute* ~ (Expression | ellipsis) ~ ("," ~ Expression)? ~ ";"
+}
+
+PrintStmt = {
+    "print" ~ Attribute* ~ Expression ~ ("," ~ Expression)? ~ ";"
+}
+
+RevealStmt = {
+    "reveal" ~ Expression ~ ("," ~ Expression)? ~ ";"
+}
+
+ForallStmt = {
+    "forall" ~ ("(" ~ QuantifierDomain? ~ ")" | QuantifierDomain?) ~ EnsuresClause* ~ BlockStmt?
+}
+
+ModifyStmt = {
+    "modify" ~ Attribute* ~ (FrameExpression ~ ("," ~ FrameExpression)* | ellipsis) ~ (BlockStmt | ";")
+}
+
+CalcStmt  = { "calc" ~ Attribute* ~ CalcOp? ~ "{" ~ CalcBody_ ~ "}" }
+CalcBody_ = { (CalcLine_ ~ CalcOp? ~ Hints_)* }
+CalcLine_ = { Expression ~ ";" }
+Hints_    = { BlockStmt | CalcStmt }
+CalcOp    = {
+    "==" ~ ("#" ~ "[" ~ Expression ~ "]")?
+  | "<"
+  | ">"
+  | "!="
+  | "<="
+  | ">="
+  | "<==>"
+  | "==>"
+  | "<=="
+}
+
+SkeletonStmt = { ellipsis ~ ";" }
 
 // Expressions
-Expression = { EquivExpression ~ (";" ~ Expression)? }
-EquivExpression = { ImpliesExpression ~ ("<==>" ~ ImpliesExpression)* }
-ImpliesExpliesExpression = {
-    LogicalExpression ~ (
-        "==>" ~ ImpliesExpression
-        | "<==" ~ LogicalExpression ~ ("<==" ~ LogicalExpression)*
-    )?
+Expression               = { EquivExpression ~ (";" ~ Expression)? }
+EquivExpression          = { ImpliesExpression ~ ("<==>" ~ ImpliesExpression)* }
+// unused
+/*ImpliesExpliesExpression = {
+    LogicalExpression ~ ("==>" ~ ImpliesExpression | "<==" ~ LogicalExpression ~ ("<==" ~ LogicalExpression)*)?
+}*/
+ImpliesExpression        = { LogicalExpression ~ ("==>" ~ ImpliesExpression)? }
+LogicalExpression        = {
+    RelationalExpression ~ (("&&" ~ RelationalExpression)+ | ("||" ~ RelationalExpression)+)?
+  | ("&&" ~ RelationalExpression)+
+  | ("||" ~ RelationalExpression)+// Make it failable
 }
-ImpliesExpression = { LogicalExpression ~ ("==>" ~ ImpliesExpression)? }
-LogicalExpression = { 
-    RelationalExpression ~ (
-        "&&" ~ RelationalExpression ~ ("&&" ~ RelationalExpression)*
-        | "||" ~ RelationalExpression ~ ("||" ~ RelationalExpression)*
-    )?
-    | ("&&" ~ RelationalExpression)*
-    | ("||" ~ RelationalExpression)*
+RelationalExpression     = { ShiftTerm ~ (RelOp ~ ShiftTerm)* }
+RelOp                    = {
+    "==" ~ ("#" ~ "[" ~ Expression ~ "]")?
+  | "!=" ~ ("#" ~ "[" ~ Expression ~ "]")?
+  | "<=" // mut be prior to < and >, otherwise it will match < and >
+  | ">="
+  | "<"
+  | ">"
+  | "in"
+  | "!in"
+  | "!!"
 }
-RelationalExpression = { ShiftTerm ~ (RelOp ~ ShiftTerm)* }
-RelOp = { 
-    "==" ~ (
-        "#" ~ "[" ~ Expression ~ "]"
-    )?
-    | "!=" ~ (
-        "#" ~ "[" ~ Expression ~ "]"
-    )?
-    |"<" | ">" | "<=" | ">="
-    | "in" | "!in" | "!!"
-}
-ShiftTerm = { Term ~ (ShiftOp ~ Term)* }
-ShiftOp = { "<<" | ">>" }
-Term = { Factor ~ (AddOp ~ Factor)* }
-AddOp = { "+" | "-" }
-Factor = { BitvectorFactor ~ (MulOp ~ BitvectorFactor)* }
-MulOp = { "*" | "/" | "%" }
-BitvectorFactor = { AsExpression ~ (BVOp ~ AsExpression)* }
-BVOp = { "&" | "|" | "^" }
-AsExpression = { UnaryExpression ~ ("as" | "is") ~ Type }
-UnaryExpression = { 
+ShiftTerm                = { Term ~ (ShiftOp ~ Term)* }
+ShiftOp                  = { "<<" | ">>" }
+Term                     = { Factor ~ (AddOp ~ Factor)* }
+AddOp                    = { "+" | "-" }
+Factor                   = { BitvectorFactor ~ (MulOp ~ BitvectorFactor)* }
+MulOp                    = { "*" | "/" | "%" }
+BitvectorFactor          = { AsExpression ~ (BVOp ~ AsExpression)* }
+BVOp                     = { "&" | "|" | "^" }
+AsExpression             = { UnaryExpression ~ (("as" | "is") ~ Type)* }
+UnaryExpression          = {
     "-" ~ UnaryExpression
-    | "!" ~ UnaryExpression
-    | PrimaryExpression
+  | "!" ~ UnaryExpression
+  | PrimaryExpression
 }
 
-// TODO: Here
-PrimaryExpression = { "*" }
-
-/*
 PrimaryExpression = {
     NameSegment ~ Suffix*
-    | LambdaExpression
-    | MapDisplayExpr ~ Suffix?
-    | SeqDisplayExpr ~ Suffix?
-    | SetDisplayExpr ~ Suffix?
-    | EndlessExpression
-    | ConstAtomExpression ~ Suffix?
-}*/
+  | LambdaExpression
+  | MapDisplayExpr ~ Suffix*
+  | SeqDisplayExpr ~ Suffix*
+  | SetDisplayExpr ~ Suffix*
+  | ConstAtomExpression ~ Suffix*
+  | EndlessExpression
+}
 
+LambdaExpression = {
+    (WildIdent | "(" ~ (IdentTypeOptional ~ ("," ~ IdentTypeOptional)*)? ~ ")") ~ LambdaSpec ~ "=>" ~ Expression
+}
 
+Lhs = {
+    NameSegment ~ Suffix*
+  | ConstAtomExpression ~ Suffix+
+}
+
+Rhs = {
+    (ArrayAllocation_ | ObjectAllocation_ | Expression | HavocRhs_) ~ Attribute*
+}
+
+ArrayAllocation_ = _{
+    "new" ~ Type? ~ "[" ~ Expression? ~ "]" ~ ("(" ~ Expression ~ ")" | "[" ~ Expression? ~ "]")?
+}
+
+ObjectAllocation_ = _{
+    "new" ~ Type ~ ("." ~ TypeNameOrCtorSuffix)? ~ ("(" ~ ActualBindings? ~ ")")?
+}
+
+HavocRhs_ = _{ "*" }
+
+ConstAtomExpression = {
+    LiteralExpression
+  | "this"
+  | FreshExpression_
+  | AllocatedExpression_
+  | UnchangedExpression_
+  | OldExpression_
+  | CardinalityExpression_
+  | ParensExpression
+}
+
+LiteralExpression = {
+    "false"
+  | "true"
+  | "null"
+  | Nat
+  | Dec
+  | charToken
+  | stringToken
+}
+
+FreshExpression_ = _{ "fresh" ~ ("@" ~ LabelName)? ~ "(" ~ Expression ~ ")" }
+
+AllocatedExpression_ = _{
+    "allocated" ~ "(" ~ Expression ~ ")"
+}
+
+UnchangedExpression_ = _{
+    "unchanged" ~ ("@" ~ LabelName)? ~ "(" ~ FrameExpression ~ ("," ~ FrameExpression)* ~ ")"
+}
+
+OldExpression_ = _{
+    "old" ~ ("@" ~ LabelName)? ~ "(" ~ Expression ~ ")"
+}
+
+CardinalityExpression_ = _{ "|" ~ Expression ~ "|" }
+
+ParensExpression = { "(" ~ Expressions? ~ ")" }
+
+SeqDisplayExpr = {
+    "[" ~ Expressions? ~ "]"
+  | "seq" ~ GenericInstantiation? ~ "(" ~ Expression ~ "," ~ Expression ~ ")"
+}
+
+SetDisplayExpr = {
+    ("iset" | "multiset")? ~ "{" ~ Expressions? ~ "}"
+  | "multiset" ~ "(" ~ Expression ~ ")"
+}
+
+MapDisplayExpr = { ("map" | "imap") ~ "[" ~ MapLiteralExpressions? ~ "]" }
+
+MapLiteralExpressions = {
+    Expression ~ ":=" ~ Expression ~ ("," ~ Expression ~ ":=" ~ Expression)*
+}
+
+EndlessExpression = {
+    IfExpression
+  | MatchExpression
+  | QuantifierExpression
+  | SetComprehensionExpr
+  | StmtInExpr ~ Expression
+  | LetExpression
+  | MapComprehensionExpr
+}
+
+IfExpression = {
+    "if" ~ (BindingGuard | Expression) ~ "then" ~ Expression ~ "else" ~ Expression
+}
+
+CasePattern = {
+    Ident ~ "(" ~ (CasePattern ~ ("," ~ CasePattern)*)? ~ ")"
+  | "(" ~ (CasePattern ~ ("," ~ CasePattern)*)? ~ ")"
+  | IdentTypeOptional
+}
+
+ExtendedPattern = {
+    PossiblyNegatedLiteralExpression
+  | IdentTypeOptional
+  | Ident? ~ "(" ~ (ExtendedPattern ~ ("," ~ ExtendedPattern)*)? ~ ")"
+}
+
+PossiblyNegatedLiteralExpression = {
+    "-" ~ (Nat | Dec)
+  | LiteralExpression
+}
+
+MatchExpression = {
+    "match" ~ Expression ~ ("{" ~ CaseExpression* ~ "}" | CaseExpression*)
+}
+
+CaseExpression = { "case" ~ ExtendedPattern ~ "=>" ~ Expression }
+
+QuantifierExpression = {
+    ("forall" | "exists") ~ QuantifierDomain ~ "::" ~ Expression
+}
+
+QuantifierDomain = {
+    IdentTypeOptional ~ ("," ~ IdentTypeOptional)* ~ Attribute* ~ ("|" ~ Expression)?
+}
+
+SetComprehensionExpr = {
+    ("set" | "iset")? ~ IdentTypeOptional ~ ("," ~ IdentTypeOptional)* ~ Attribute* ~ "|" ~ Expression ~ ("::" ~ Expression)?
+}
+
+StmtInExpr = {
+    AssertStmt
+  | AssumeStmt
+  | ExpectStmt
+  | RevealStmt
+  | CalcStmt
+}
+
+LetExpression = {
+    ("ghost"? ~ "var" ~ CasePattern ~ ("," ~ CasePattern)* ~ (":=" | ":-" | Attribute* ~ ":|") ~ Expression ~ ("," ~ Expression)* | ":-" ~ Expression) ~ ";" ~ Expression
+}
+
+MapComprehensionExpr = {
+    ("map" | "imap") ~ IdentTypeOptional ~ ("," ~ IdentTypeOptional)* ~ Attribute* ~ ("|" ~ Expression)? ~ "::" ~ Expression ~ (":=" ~ Expression)?
+}
+
+NameSegment = { Ident ~ (GenericInstantiation | HashCall)? }
+
+HashCall = {
+    "#" ~ GenericInstantiation? ~ "[" ~ Expression ~ "]" ~ "(" ~ ActualBindings? ~ ")"
+}
+
+Suffix = {
+    AugmentedDotSuffix_
+  | DatatypeUpdateSuffix_
+  | SubsequenceSuffix_
+  | SlicesByLengthSuffix_
+  | SequenceUpdateSuffix_
+  | SelectionSuffix_
+  | ArgumentListSuffix_
+}
+
+AugmentedDotSuffix_ = _{ "." ~ DotSuffix ~ (GenericInstantiation | HashCall)? }
+
+DatatypeUpdateSuffix_ = _{
+    "." ~ "(" ~ MemberBindingUpdate ~ ("," ~ MemberBindingUpdate)* ~ ")"
+}
+
+MemberBindingUpdate = {
+    (ident | digits) ~ ":=" ~ Expression
+}
+
+SubsequenceSuffix_ = _{
+    "[" ~ Expression? ~ ".." ~ Expression? ~ "]"
+}
+
+SlicesByLengthSuffix_ = _{
+    "[" ~ Expression ~ ":" ~ (Expression ~ (":" ~ Expression)* ~ ":"?)? ~ "]"
+}
+
+SequenceUpdateSuffix_ = _{
+    "[" ~ Expression ~ ":=" ~ Expression ~ "]"
+}
+
+SelectionSuffix_ = _{
+    "[" ~ Expression ~ ("," ~ Expression)* ~ "]"
+}
+
+ArgumentListSuffix_ = _{ "(" ~ Expressions? ~ ")" }
+
+Expressions = { Expression ~ ("," ~ Expression)* }
+
+ActualBindings = { ActualBinding ~ ("," ~ ActualBinding)* }
+ActualBinding  = { (NoUSIdentOrDigits ~ ":=")? ~ Expression }
 
 // Attributes
 Attribute = { "{:" ~ AttributeName ~ Expression? ~ ":}" }

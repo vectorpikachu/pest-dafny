@@ -1,0 +1,29 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+            Attribute,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        757,
+    ),
+    line_col: Pos(
+        (
+            26,
+            14,
+        ),
+    ),
+    path: None,
+    line: "      n.Repr := {n};",
+    continued_line: None,
+    parse_attempts: None,
+}
