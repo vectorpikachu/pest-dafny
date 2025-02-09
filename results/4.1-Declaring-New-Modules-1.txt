@@ -1,0 +1,29 @@
+- Dafny > TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > ClassDecl 
+      - ClassName 
+      - ClassMemberDecl > FieldDecl > FIdentType 
+         - NoUSIdentOrDigits 
+         - Type 
+      - ClassMemberDecl > MethodDecl 
+        - MethodFunctionName 
+        - Formals 
+        - MethodSpec 
+    - TopDecl > DatatypeDecl 
+      - DatatypeName 
+      - DatatypeMemberDecl 
+       - DatatypeMemberName 
+       - FormalsOptionalIds > TypeIdentOptional > Type 
+      - DatatypeMemberDecl 
+       - DatatypeMemberName 
+       - FormalsOptionalIds > TypeIdentOptional > Type 
+    - TopDecl > SynonymDecl > SynonymTypeName 
+    - TopDecl > ClassMemberDecl > MethodDecl 
+       - MethodFunctionName 
+       - Formals 
+       - MethodSpec 
+    - TopDecl > ClassMemberDecl > FunctionDecl 
+       - MethodFunctionName 
+       - Formals 
+       - Type 
+       - FucntionSpec 

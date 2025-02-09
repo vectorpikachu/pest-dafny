@@ -1,0 +1,46 @@
+- Dafny 
+ - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > ClassMemberDecl > FunctionDecl 
+       - MethodFunctionName 
+       - Formals > GIdentType > IdentType 
+          - WildIdent 
+          - Type 
+       - Type 
+       - FucntionSpec 
+       - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+               - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident 
+               - AddOp 
+               - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+ - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > SubModuleDecl > ModuleImport > QualifiedModuleExport > QualifiedModuleName 
+    - TopDecl > ClassMemberDecl > FunctionDecl 
+       - MethodFunctionName 
+       - Formals > GIdentType > IdentType 
+          - WildIdent 
+          - Type 
+       - Type 
+       - FucntionSpec 
+       - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+               - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident 
+               - AddOp 
+               - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+    - TopDecl > ClassMemberDecl > MethodDecl 
+       - MethodFunctionName 
+       - Formals 
+       - MethodSpec 
+       - BlockStmt 
+        - Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+                - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+                       - NameSegment > Ident 
+                       - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+                - RelOp 
+                - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+        - Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+                - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+                       - NameSegment > Ident 
+                       - Suffix > DotSuffix 
+                       - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+                - RelOp 
+                - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 

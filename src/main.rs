@@ -38,6 +38,7 @@ fn main() {
     let mut output_file = File::create(output).unwrap();
     if result.is_ok() {
         let pairs = result.unwrap();
+        println!("{:#?}", pairs);
         let mut buf = Vec::new();
         print_tight_ast(pairs, 0, &mut buf);
         writeln!(output_file, "{}", String::from_utf8(buf).unwrap()).unwrap();
@@ -56,11 +57,11 @@ fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
             Rule::Dafny => {
                 print_ident(level, buf);
                 print!("- {:?} ", rule);
-                write!(buf, "- {:?}", rule).unwrap();
+                write!(buf, "- {:?} ", rule).unwrap();
             }
             _ => {
                 print!("> {:?} ", rule);
-                write!(buf, "> {:?}", rule).unwrap();
+                write!(buf, "> {:?} ", rule).unwrap();
             }
         }
         print_tight_ast(pairs.last().unwrap().into_inner(), level + 1, buf);
@@ -70,7 +71,7 @@ fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
             writeln!(buf).unwrap();
             print_ident(level, buf);
             print!("- {:?} ", pair.as_rule());
-            write!(buf, "- {:?}", pair.as_rule()).unwrap();
+            write!(buf, "- {:?} ", pair.as_rule()).unwrap();
             print_tight_ast(pair.into_inner(), level + 1, buf);
         }
     }

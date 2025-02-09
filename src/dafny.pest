@@ -283,7 +283,7 @@ DomainType_ = _{
   | NamedType_
 }
 
-NamedType_             = { NameSegmentForTypeName ~ ("." ~ NameSegmentForTypeName)* }
+NamedType_             = _{ NameSegmentForTypeName ~ ("." ~ NameSegmentForTypeName)* }
 NameSegmentForTypeName = { Ident ~ GenericInstantiation? }
 
 // Basic Types

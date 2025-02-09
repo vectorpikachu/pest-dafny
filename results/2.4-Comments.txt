@@ -1,0 +1,4 @@
+- Dafny > TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName 
+    - Formals 
+    - MethodSpec 

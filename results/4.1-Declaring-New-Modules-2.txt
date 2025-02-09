@@ -1,0 +1,13 @@
+- Dafny > TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > SubModuleDecl > ModuleDefinition 
+       - QualifiedModuleName 
+       - TopDecl > ClassDecl 
+         - ClassName 
+         - ClassMemberDecl > MethodDecl 
+           - MethodFunctionName 
+           - Formals 
+           - MethodSpec 
+         - ClassMemberDecl > FieldDecl > FIdentType 
+            - NoUSIdentOrDigits 
+            - Type 

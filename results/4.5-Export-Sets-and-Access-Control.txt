@@ -1,0 +1,22 @@
+- Dafny 
+ - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+       - CIdentType > NoUSIdentOrDigits 
+       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+       - CIdentType > NoUSIdentOrDigits 
+       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+ - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > SubModuleDecl > ModuleImport 
+       - ModuleName 
+       - QualifiedModuleExport > QualifiedModuleName 
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+       - CIdentType > NoUSIdentOrDigits 
+       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+                   - NameSegment > Ident 
+                   - Suffix > DotSuffix 
+ - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName 
+    - TopDecl > SubModuleDecl > ModuleImport > QualifiedModuleExport > QualifiedModuleName 
