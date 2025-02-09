@@ -53,8 +53,8 @@ method Search(ll: Node?) returns (r: int)
     {
       jj := jj.next;
       i := i + 1;
-    }r
-      := i;
+    }
+    r := i;
   }
 }
 method Main()

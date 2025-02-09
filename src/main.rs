@@ -1,8 +1,9 @@
-use pest::Parser;
+use pest::{iterators::Pairs, Parser};
 use pest_derive::Parser;
 use std::{fs::File, io::Read};
 use clap::{Command, Arg};
 use std::io::Write;
+
 
 #[derive(Parser)]
 #[grammar = "dafny.pest"]
@@ -34,14 +35,50 @@ fn main() {
     let mut contents = String::new();
     input_file.read_to_string(&mut contents).unwrap();
     let result = DafnyParser::parse(Rule::Dafny, &contents);
-    println!("{:#?}", result);
-
     let mut output_file = File::create(output).unwrap();
     if result.is_ok() {
-        writeln!(output_file, "{:#?}", result.unwrap()).unwrap();
+        let pairs = result.unwrap();
+        let mut buf = Vec::new();
+        print_tight_ast(pairs, 0, &mut buf);
+        writeln!(output_file, "{}", String::from_utf8(buf).unwrap()).unwrap();
     } else {
         writeln!(output_file, "{:#?}", result.unwrap_err()).unwrap();
     }
+}
 
-    println!("Hello, world!");
+fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
+    if pairs.len() == 0 {
+        return;
+    }
+    if pairs.len() == 1 {
+        let rule = pairs.clone().last().unwrap().as_rule();
+        match rule {
+            Rule::Dafny => {
+                print_ident(level, buf);
+                print!("- {:?} ", rule);
+                write!(buf, "- {:?}", rule).unwrap();
+            }
+            _ => {
+                print!("> {:?} ", rule);
+                write!(buf, "> {:?}", rule).unwrap();
+            }
+        }
+        print_tight_ast(pairs.last().unwrap().into_inner(), level + 1, buf);
+    } else {
+        for pair in pairs {
+            println!();
+            writeln!(buf).unwrap();
+            print_ident(level, buf);
+            print!("- {:?} ", pair.as_rule());
+            write!(buf, "- {:?}", pair.as_rule()).unwrap();
+            print_tight_ast(pair.into_inner(), level + 1, buf);
+        }
+    }
+}
+
+fn print_ident(level: usize, buf: &mut Vec<u8>) {
+    for _ in 0..level {
+        print!(" ");
+        write!(buf, " ").unwrap();
+    }
 }

@@ -182,7 +182,7 @@ Nat = { digits | hexdigits }
 Dec = { decimaldigits }
 
 // Programs
-Dafny             =  { SOI ~ IncludeDirective_* ~ TopDecl* ~ EOI }
+Dafny             =  { IncludeDirective_* ~ TopDecl* }
 IncludeDirective_ = _{ "include" ~ stringToken }
 TopDecl           =  {
     DeclModifier* ~ (SubModuleDecl
@@ -435,7 +435,9 @@ DatatypeMemberDecl = {
 
 // Statements
 
-Stmt = { ("label" ~ LabelName ~ ":")* ~ NonLabeledStmt }
+Stmt = { NonLabeledStmt | LabeledStmt } // Try to first match the NonLabeledStmt
+
+LabeledStmt = { ("label" ~ LabelName ~ ":")+ ~ NonLabeledStmt }
 
 NonLabeledStmt = {
   BlockStmt
@@ -540,7 +542,7 @@ ExpectStmt = {
 }
 
 PrintStmt = {
-    "print" ~ Attribute* ~ Expression ~ ("," ~ Expression)? ~ ";"
+    "print" ~ Attribute* ~ Expression ~ ("," ~ Expression)* ~ ";"
 }
 
 RevealStmt = {
@@ -574,7 +576,10 @@ CalcOp    = {
 SkeletonStmt = { ellipsis ~ ";" }
 
 // Expressions
-Expression               = { EquivExpression ~ (";" ~ Expression)? }
+Expression               = { EquivExpression | EquivExpression ~ ";" ~ Expression }
+// The EquivExpression ~ (";" ~ Expression)? will always match the second rule
+// When parsing two stmts, which ; will be consumed.
+
 EquivExpression          = { ImpliesExpression ~ ("<==>" ~ ImpliesExpression)* }
 // unused
 /*ImpliesExpliesExpression = {
