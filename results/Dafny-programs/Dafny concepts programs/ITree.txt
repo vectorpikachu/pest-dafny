@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            Type,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        154,
+    ),
+    line_col: Pos(
+        (
+            4,
+            33,
+        ),
+    ),
+    path: None,
+    line: "| IOut(msg: string, void_cont: () -> ITree<A>)",
+    continued_line: None,
+    parse_attempts: None,
+}

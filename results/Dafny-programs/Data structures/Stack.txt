@@ -1,0 +1,22 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            DeclModifier,
+            ClassMemberDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        115,
+    ),
+    line_col: Pos(
+        (
+            6,
+            25,
+        ),
+    ),
+    path: None,
+    line: "      var capacity : int; // capacity, max number of elements allowed on the stack.",
+    continued_line: None,
+    parse_attempts: None,
+}

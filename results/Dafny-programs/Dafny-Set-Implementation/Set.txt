@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            PrimaryExpression,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        25,
+    ),
+    line_col: Pos(
+        (
+            3,
+            22,
+        ),
+    ),
+    path: None,
+    line: "class {:autocontracts} Conjunto",
+    continued_line: None,
+    parse_attempts: None,
+}

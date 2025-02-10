@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        252,
+    ),
+    line_col: Pos(
+        (
+            9,
+            21,
+        ),
+    ),
+    path: None,
+    line: "        invariant 0 <= i <= N",
+    continued_line: None,
+    parse_attempts: None,
+}

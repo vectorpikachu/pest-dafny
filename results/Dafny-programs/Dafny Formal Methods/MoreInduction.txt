@@ -1,0 +1,33 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ReadsClause,
+            FunctionBody,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        291,
+    ),
+    line_col: Pos(
+        (
+            8,
+            36,
+        ),
+    ),
+    path: None,
+    line: "  ensures IsFlat(FlattenMain(list));",
+    continued_line: None,
+    parse_attempts: None,
+}

@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        64,
+    ),
+    line_col: Pos(
+        (
+            3,
+            15,
+        ),
+    ),
+    path: None,
+    line: "  assert (set x: int | x in {-2, -1, 0, 1, 2} :: x * 2) == {-4, -2, 0, 2, 4};",
+    continued_line: None,
+    parse_attempts: None,
+}

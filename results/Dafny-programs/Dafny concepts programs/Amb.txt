@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        293,
+    ),
+    line_col: Pos(
+        (
+            14,
+            11,
+        ),
+    ),
+    path: None,
+    line: "    match u",
+    continued_line: None,
+    parse_attempts: None,
+}

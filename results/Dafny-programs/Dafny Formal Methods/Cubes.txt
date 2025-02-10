@@ -1,0 +1,35 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
+            GenericInstantiation,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        153,
+    ),
+    line_col: Pos(
+        (
+            6,
+            18,
+        ),
+    ),
+    path: None,
+    line: "  ensures forall i :: 0 <= i < a.Length ==> a[i] == i*i*i",
+    continued_line: None,
+    parse_attempts: None,
+}

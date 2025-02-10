@@ -1,22 +1,23 @@
 - Dafny 
- - TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "A"
     - TopDecl > ClassMemberDecl > ConstantFieldDecl 
-       - CIdentType > NoUSIdentOrDigits 
-       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+      - CIdentType > NoUSIdentOrDigits > "a"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
     - TopDecl > ClassMemberDecl > ConstantFieldDecl 
-       - CIdentType > NoUSIdentOrDigits 
-       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
- - TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
+      - CIdentType > NoUSIdentOrDigits > "z"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "B"
     - TopDecl > SubModuleDecl > ModuleImport 
-       - ModuleName 
-       - QualifiedModuleExport > QualifiedModuleName 
+      - ModuleName > "Z"
+      - QualifiedModuleExport > QualifiedModuleName > "A"
     - TopDecl > ClassMemberDecl > ConstantFieldDecl 
-       - CIdentType > NoUSIdentOrDigits 
-       - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
-                   - NameSegment > Ident 
-                   - Suffix > DotSuffix 
- - TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
-    - TopDecl > SubModuleDecl > ModuleImport > QualifiedModuleExport > QualifiedModuleName 
+      - CIdentType > NoUSIdentOrDigits > "b"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+        - NameSegment > Ident > "Z"
+        - Suffix > DotSuffix > "a"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "C"
+    - TopDecl > SubModuleDecl > ModuleImport > QualifiedModuleExport > QualifiedModuleName > "B"
+  - EOI > ""

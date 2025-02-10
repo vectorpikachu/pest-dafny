@@ -1,0 +1,103 @@
+- Dafny 
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "Main"
+    - Formals > "()"
+    - BlockStmt 
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "tree"
+        - Rhs > Type 
+          - NameSegmentForTypeName > Ident > "AvlTree"
+          - NameSegmentForTypeName > Ident > "Init"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "11"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "12"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "13"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "5"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "6"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "4"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "2"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "20"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "21"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Insert"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "22"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Print"
+        - Suffix > "()"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Remove"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "22"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Remove"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "21"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Remove"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "20"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Remove"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "12"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Remove"
+        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "13"
+      - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+        - NameSegment > Ident > "tree"
+        - Suffix > DotSuffix > "Print"
+        - Suffix > "()"
+      - Stmt > NonLabeledStmt > PrintStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > ParensExpression > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > ""\nFound 5 = ""
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "found5"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "tree"
+          - Suffix > DotSuffix > "Find"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "5"
+      - Stmt > NonLabeledStmt > PrintStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > ParensExpression > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "found5"
+      - Stmt > NonLabeledStmt > PrintStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > ParensExpression > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > ""\nFound 102 = ""
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "found102"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "tree"
+          - Suffix > DotSuffix > "Find"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "102"
+      - Stmt > NonLabeledStmt > PrintStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > ParensExpression > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "found102"
+  - EOI > ""

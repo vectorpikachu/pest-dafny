@@ -1,0 +1,35 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
+            GenericInstantiation,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        256,
+    ),
+    line_col: Pos(
+        (
+            8,
+            18,
+        ),
+    ),
+    path: None,
+    line: "  ensures forall k :: 0 <= k < v2.Length ==> v2[k] == v[k] * scalar",
+    continued_line: None,
+    parse_attempts: None,
+}

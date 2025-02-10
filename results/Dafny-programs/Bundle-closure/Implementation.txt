@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            TopDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        150,
+    ),
+    line_col: Pos(
+        (
+            8,
+            3,
+        ),
+    ),
+    path: None,
+    line: "  { forall m :: m in G ==> forall n :: n in m.next ==> n in G }",
+    continued_line: None,
+    parse_attempts: None,
+}

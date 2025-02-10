@@ -1,0 +1,22 @@
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "A"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "a"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "B"
+    - QualifiedModuleName > "A"
+    - TopDecl > SubModuleDecl > ModuleDefinition 
+      - QualifiedModuleName > "A"
+      - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+        - CIdentType > NoUSIdentOrDigits > "a"
+        - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "30"
+    - TopDecl > ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "m"
+      - Formals > "()"
+      - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+  - EOI > ""

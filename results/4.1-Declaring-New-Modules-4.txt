@@ -1,29 +1,30 @@
-- Dafny > TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Mod"
     - TopDecl > SubModuleDecl > ModuleDefinition 
-       - QualifiedModuleName 
-       - TopDecl > ClassMemberDecl > FunctionDecl 
-          - MethodFunctionName 
-          - Formals > GIdentType > IdentType 
-             - WildIdent 
-             - Type 
-          - Type 
-          - FucntionSpec 
-          - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
-                  - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident 
-                  - AddOp 
-                  - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+      - QualifiedModuleName > "Helpers"
+      - TopDecl > ClassMemberDecl > FunctionDecl 
+        - MethodFunctionName > "addOne"
+        - Formals > GIdentType > IdentType 
+          - WildIdent > "n"
+          - Type > "nat"
+        - Type > "nat"
+        - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+          - AddOp > "+"
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1
+    "
     - TopDecl > ClassMemberDecl > MethodDecl 
-       - MethodFunctionName 
-       - Formals 
-       - MethodSpec 
-       - BlockStmt 
+      - MethodFunctionName > "m"
+      - Formals > "()"
+      - BlockStmt 
         - Stmt > NonLabeledStmt > VarDeclStatement 
-           - LocalIdentTypeOptional > WildIdent 
-           - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat 
+          - LocalIdentTypeOptional > WildIdent > "x"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "5"
         - Stmt > NonLabeledStmt > UpdateStmt 
-           - Lhs > NameSegment > Ident 
-           - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
-                        - NameSegment > Ident 
-                        - Suffix > DotSuffix 
-                        - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident 
+          - Lhs > NameSegment > Ident > "x"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "Helpers"
+            - Suffix > DotSuffix > "addOne"
+            - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "x"
+  - EOI > ""

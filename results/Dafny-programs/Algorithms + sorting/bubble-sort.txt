@@ -1,0 +1,22 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        205,
+    ),
+    line_col: Pos(
+        (
+            7,
+            5,
+        ),
+    ),
+    path: None,
+    line: "    reads A",
+    continued_line: None,
+    parse_attempts: None,
+}

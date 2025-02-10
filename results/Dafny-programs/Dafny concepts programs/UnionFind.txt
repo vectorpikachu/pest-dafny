@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            PrimaryExpression,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        270,
+    ),
+    line_col: Pos(
+        (
+            9,
+            24,
+        ),
+    ),
+    path: None,
+    line: "  class {:autocontracts} UnionFind {",
+    continued_line: None,
+    parse_attempts: None,
+}

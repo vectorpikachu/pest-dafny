@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        180,
+    ),
+    line_col: Pos(
+        (
+            7,
+            6,
+        ),
+    ),
+    path: None,
+    line: "  if s == t then 0 else Sum(a, s, t-1) + a[t-1]",
+    continued_line: None,
+    parse_attempts: None,
+}

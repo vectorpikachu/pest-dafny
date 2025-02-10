@@ -1,0 +1,24 @@
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "M"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "a"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "b"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "c"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+    - TopDecl > SubModuleDecl > ModuleExport 
+      - ExportId > "A"
+      - ExportSignature > TypeNameOrCtorSuffix > "a"
+    - TopDecl > SubModuleDecl > ModuleExport 
+      - ExportId > "B"
+      - ExportSignature > TypeNameOrCtorSuffix > "b"
+    - TopDecl > SubModuleDecl > ModuleExport 
+      - ExportId > "C"
+      - ExportSignature > TypeNameOrCtorSuffix > "c"
+      - ExportId > "A"
+      - ExportId > "B"
+  - EOI > ""

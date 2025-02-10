@@ -1,3 +1,4 @@
 - Dafny 
- - TopDecl > SubModuleDecl > ModuleDefinition > QualifiedModuleName 
- - TopDecl > SubModuleDecl > ModuleDefinition > QualifiedModuleName 
+  - TopDecl > SubModuleDecl > ModuleDefinition > QualifiedModuleName > "A"
+  - TopDecl > SubModuleDecl > ModuleDefinition > QualifiedModuleName > "A.B"
+  - EOI > ""

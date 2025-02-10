@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        399,
+    ),
+    line_col: Pos(
+        (
+            19,
+            20,
+        ),
+    ),
+    path: None,
+    line: "    assume (forall o: Node :: o in existingRegion && o.nxt != null ==> o.nxt in existingRegion);",
+    continued_line: None,
+    parse_attempts: None,
+}

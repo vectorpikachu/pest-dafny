@@ -1,0 +1,21 @@
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleImport 
+    - ModuleName > "A"
+    - QualifiedModuleExport > QualifiedModuleName > "B"
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "m"
+    - Formals > "()"
+    - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+      - NameSegment > Ident > "A"
+      - Suffix > DotSuffix > "whatever"
+      - Suffix > "()"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "B"
+    - TopDecl > ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "whatever"
+      - Formals > "()"
+      - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1 "
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1"
+  - EOI > ""

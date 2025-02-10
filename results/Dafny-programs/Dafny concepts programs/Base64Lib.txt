@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            TopDecl,
+            TypeMembers,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        168,
+    ),
+    line_col: Pos(
+        (
+            8,
+            35,
+        ),
+    ),
+    path: None,
+    line: "    newtype index = x | 0 <= x < 0x40",
+    continued_line: None,
+    parse_attempts: None,
+}

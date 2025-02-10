@@ -1,29 +1,28 @@
-- Dafny > TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Mod"
     - TopDecl > ClassDecl 
-      - ClassName 
+      - ClassName > "C"
       - ClassMemberDecl > FieldDecl > FIdentType 
-         - NoUSIdentOrDigits 
-         - Type 
+        - NoUSIdentOrDigits > "f"
+        - Type > "int"
       - ClassMemberDecl > MethodDecl 
-        - MethodFunctionName 
-        - Formals 
-        - MethodSpec 
+        - MethodFunctionName > "m"
+        - Formals > "()"
     - TopDecl > DatatypeDecl 
-      - DatatypeName 
+      - DatatypeName > "Option"
       - DatatypeMemberDecl 
-       - DatatypeMemberName 
-       - FormalsOptionalIds > TypeIdentOptional > Type 
+        - DatatypeMemberName > "A"
+        - FormalsOptionalIds > TypeIdentOptional > Type > "int"
       - DatatypeMemberDecl 
-       - DatatypeMemberName 
-       - FormalsOptionalIds > TypeIdentOptional > Type 
-    - TopDecl > SynonymDecl > SynonymTypeName 
+        - DatatypeMemberName > "B"
+        - FormalsOptionalIds > TypeIdentOptional > Type > "int"
+    - TopDecl > SynonymDecl > SynonymTypeName > "T"
     - TopDecl > ClassMemberDecl > MethodDecl 
-       - MethodFunctionName 
-       - Formals 
-       - MethodSpec 
+      - MethodFunctionName > "m"
+      - Formals > "()"
     - TopDecl > ClassMemberDecl > FunctionDecl 
-       - MethodFunctionName 
-       - Formals 
-       - Type 
-       - FucntionSpec 
+      - MethodFunctionName > "f"
+      - Formals > "()"
+      - Type > "int"
+  - EOI > ""

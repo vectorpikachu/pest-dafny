@@ -1,0 +1,35 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            DeclModifier,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
+            GenericInstantiation,
+            ClassMemberDecl,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        233,
+    ),
+    line_col: Pos(
+        (
+            8,
+            33,
+        ),
+    ),
+    path: None,
+    line: "    requires x == null || x in r;",
+    continued_line: None,
+    parse_attempts: None,
+}

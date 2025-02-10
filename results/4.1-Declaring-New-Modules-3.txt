@@ -1,1 +1,39 @@
 - Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Mod"
+    - TopDecl > SubModuleDecl > ModuleDefinition 
+      - QualifiedModuleName > "Helpers"
+      - TopDecl > ClassDecl 
+        - ClassName > "C"
+        - ClassMemberDecl > MethodDecl 
+          - Formals > "()"
+          - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt 
+            - Lhs 
+              - NameSegment > Ident > "this"
+              - Suffix > DotSuffix > "f"
+            - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "3"
+        - ClassMemberDecl > MethodDecl 
+          - MethodFunctionName > "doIt"
+          - Formals > "()"
+        - ClassMemberDecl > FieldDecl > FIdentType 
+          - NoUSIdentOrDigits > "f"
+          - Type > "int"
+    - TopDecl > ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "m"
+      - Formals > "()"
+      - BlockStmt 
+        - Stmt > NonLabeledStmt > VarDeclStatement 
+          - LocalIdentTypeOptional > WildIdent > "x"
+          - Rhs > Type 
+            - NameSegmentForTypeName > Ident > "Helpers"
+            - NameSegmentForTypeName > Ident > "C"
+        - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+          - NameSegment > Ident > "x"
+          - Suffix > DotSuffix > "doIt"
+          - Suffix > "()"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "x"
+            - Suffix > DotSuffix > "f"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "4"
+  - EOI > ""

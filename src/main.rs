@@ -43,28 +43,39 @@ fn main() {
         print_tight_ast(pairs, 0, &mut buf);
         writeln!(output_file, "{}", String::from_utf8(buf).unwrap()).unwrap();
     } else {
-        writeln!(output_file, "{:#?}", result.unwrap_err()).unwrap();
+        writeln!(output_file, "{:#?}", result.clone().unwrap_err()).unwrap();
+        panic!("{:?}", result.unwrap_err());
     }
 }
 
 fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
     if pairs.len() == 0 {
+        print!("{}", pairs.as_str());
+        write!(buf, "{}", pairs.as_str()).unwrap();
         return;
     }
     if pairs.len() == 1 {
-        let rule = pairs.clone().last().unwrap().as_rule();
+        let pair = pairs.clone().last().unwrap();
+        let rule = pair.as_rule();
+        let mut new_level = level;
         match rule {
             Rule::Dafny => {
                 print_ident(level, buf);
                 print!("- {:?} ", rule);
                 write!(buf, "- {:?} ", rule).unwrap();
+                new_level += 1;
             }
             _ => {
                 print!("> {:?} ", rule);
                 write!(buf, "> {:?} ", rule).unwrap();
             }
         }
-        print_tight_ast(pairs.last().unwrap().into_inner(), level + 1, buf);
+        if pair.clone().into_inner().count() == 0 {
+            print!("> \"{}\"", pair.as_str());
+            write!(buf, "> \"{}\"", pair.as_str()).unwrap();
+            return;
+        }
+        print_tight_ast(pair.into_inner(), new_level, buf);
     } else {
         for pair in pairs {
             println!();
@@ -72,6 +83,11 @@ fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
             print_ident(level, buf);
             print!("- {:?} ", pair.as_rule());
             write!(buf, "- {:?} ", pair.as_rule()).unwrap();
+            if pair.clone().into_inner().count() == 0 {
+                print!("> \"{}\"", pair.as_str());
+                write!(buf, "> \"{}\"", pair.as_str()).unwrap();
+                continue;
+            }
             print_tight_ast(pair.into_inner(), level + 1, buf);
         }
     }
@@ -79,7 +95,7 @@ fn print_tight_ast(pairs: Pairs<'_, Rule>, level: usize, buf: &mut Vec<u8>) {
 
 fn print_ident(level: usize, buf: &mut Vec<u8>) {
     for _ in 0..level {
-        print!(" ");
-        write!(buf, " ").unwrap();
+        print!("  ");
+        write!(buf, "  ").unwrap();
     }
 }

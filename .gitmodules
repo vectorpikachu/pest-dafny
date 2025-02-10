@@ -1,0 +1,3 @@
+[submodule "test/dafny-programs"]
+	path = test/dafny-programs
+	url = git@github.com:vladstejeroiu/Dafny-programs.git

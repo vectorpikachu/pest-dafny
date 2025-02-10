@@ -1,0 +1,24 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            FormalsOptionalIds,
+            TopDecl,
+            TypeMembers,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        29,
+    ),
+    line_col: Pos(
+        (
+            2,
+            28,
+        ),
+    ),
+    path: None,
+    line: "datatype natr = Zero | Succ(natr)",
+    continued_line: None,
+    parse_attempts: None,
+}

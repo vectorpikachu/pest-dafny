@@ -1,0 +1,35 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
+            GenericInstantiation,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        578,
+    ),
+    line_col: Pos(
+        (
+            21,
+            17,
+        ),
+    ),
+    path: None,
+    line: "requires forall M, A, B :: split(M, A, B) <==> (forall k :: ",
+    continued_line: None,
+    parse_attempts: None,
+}

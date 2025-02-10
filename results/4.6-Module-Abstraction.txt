@@ -1,0 +1,72 @@
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Interface"
+    - TopDecl > ClassMemberDecl > FunctionDecl 
+      - MethodFunctionName > "addSome"
+      - Formals > GIdentType > IdentType 
+        - WildIdent > "n"
+        - Type > "nat"
+      - Type > "nat"
+      - FucntionSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "addSome"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - RelOp > ">"
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+  - TopDecl 
+    - DeclModifier > "abstract"
+    - SubModuleDecl > ModuleDefinition 
+      - QualifiedModuleName > "Mod"
+      - TopDecl > SubModuleDecl > ModuleImport 
+        - ModuleName > "A"
+        - QualifiedModuleExport > QualifiedModuleName > "Interface"
+      - TopDecl > ClassMemberDecl > MethodDecl 
+        - MethodFunctionName > "m"
+        - Formals > "()"
+        - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "6 "
+          - RelOp > "<="
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "A"
+            - Suffix > DotSuffix > "addSome"
+            - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "5"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Implementation"
+    - TopDecl > ClassMemberDecl > FunctionDecl 
+      - MethodFunctionName > "addSome"
+      - Formals > GIdentType > IdentType 
+        - WildIdent > "n"
+        - Type > "nat"
+      - Type > "nat"
+      - FucntionSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "addSome"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - RelOp > "== "
+        - ShiftTerm > Term 
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+          - AddOp > "+"
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1
+  "
+      - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+        - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - AddOp > "+"
+        - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1
+  "
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Mod2"
+    - QualifiedModuleName > "Mod"
+    - TopDecl > SubModuleDecl > ModuleImport 
+      - ModuleName > "A"
+      - QualifiedModuleExport > QualifiedModuleName > "Implementation"
+    - TopDecl > ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "m"
+      - Formals > "()"
+      - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "6 "
+        - RelOp > "<="
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "A"
+          - Suffix > DotSuffix > "addSome"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "5"
+  - EOI > ""

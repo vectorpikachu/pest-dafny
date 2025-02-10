@@ -1,0 +1,9 @@
+- Dafny 
+  - TopDecl 
+    - DeclModifier > "abstract"
+    - SubModuleDecl > ModuleDefinition 
+      - QualifiedModuleName > "Spec"
+      - TopDecl > SubModuleDecl > ModuleImport 
+        - ModuleName > "I"
+        - QualifiedModuleExport > QualifiedModuleName > "Interface"
+  - EOI > ""

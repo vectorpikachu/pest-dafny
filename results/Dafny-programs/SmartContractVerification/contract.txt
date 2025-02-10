@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        606,
+    ),
+    line_col: Pos(
+        (
+            24,
+            16,
+        ),
+    ),
+    path: None,
+    line: "            if payer.balance == 0 then true else false",
+    continued_line: None,
+    parse_attempts: None,
+}

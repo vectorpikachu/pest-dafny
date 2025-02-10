@@ -1,0 +1,35 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
+            GenericInstantiation,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        72,
+    ),
+    line_col: Pos(
+        (
+            2,
+            20,
+        ),
+    ),
+    path: None,
+    line: "   requires forall i :: 0 <= i < a.Length ==> 0 <= a[i]",
+    continued_line: None,
+    parse_attempts: None,
+}

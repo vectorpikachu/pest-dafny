@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        48,
+    ),
+    line_col: Pos(
+        (
+            4,
+            6,
+        ),
+    ),
+    path: None,
+    line: "  if n < 2 then n else Fib(n-2) + Fib(n-1)",
+    continued_line: None,
+    parse_attempts: None,
+}

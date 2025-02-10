@@ -1,0 +1,22 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            DeclModifier,
+            ClassMemberDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        354,
+    ),
+    line_col: Pos(
+        (
+            17,
+            5,
+        ),
+    ),
+    path: None,
+    line: "    reads this, footprint",
+    continued_line: None,
+    parse_attempts: None,
+}

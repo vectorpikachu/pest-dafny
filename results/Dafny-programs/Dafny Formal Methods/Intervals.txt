@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        345,
+    ),
+    line_col: Pos(
+        (
+            13,
+            12,
+        ),
+    ),
+    path: None,
+    line: "    forall m,n :: 0 <= m < n < thresholds.Length ==> thresholds[m] <= thresholds[n]",
+    continued_line: None,
+    parse_attempts: None,
+}

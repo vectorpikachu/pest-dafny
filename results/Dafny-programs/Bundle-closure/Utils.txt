@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        136,
+    ),
+    line_col: Pos(
+        (
+            5,
+            13,
+        ),
+    ),
+    path: None,
+    line: "    ensures forall i :: 0 <= i < |s| ==> a[i] == s[i]",
+    continued_line: None,
+    parse_attempts: None,
+}

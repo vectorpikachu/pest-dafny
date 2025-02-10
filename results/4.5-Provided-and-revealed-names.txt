@@ -1,0 +1,22 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            ellipsis,
+            TopDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        29,
+    ),
+    line_col: Pos(
+        (
+            2,
+            19,
+        ),
+    ),
+    path: None,
+    line: "  export provides a",
+    continued_line: None,
+    parse_attempts: None,
+}

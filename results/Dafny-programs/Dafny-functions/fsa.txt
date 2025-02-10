@@ -1,0 +1,28 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        402,
+    ),
+    line_col: Pos(
+        (
+            8,
+            14,
+        ),
+    ),
+    path: None,
+    line: "    requires transitions == [[1, 0], [1, 0]]",
+    continued_line: None,
+    parse_attempts: None,
+}

@@ -1,0 +1,23 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            DeclModifier,
+            GenericInstantiation,
+            ClassMemberDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        133,
+    ),
+    line_col: Pos(
+        (
+            7,
+            23,
+        ),
+    ),
+    path: None,
+    line: "    var root: AvlNode?;",
+    continued_line: None,
+    parse_attempts: None,
+}

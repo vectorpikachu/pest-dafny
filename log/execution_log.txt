@@ -1,0 +1,842 @@
+执行统计日志
+--------------------
+Panic: ./test\1.1-Dafny-Example.dfy
+Error message:    Compiling pest-dafny v0.1.0 (D:\HuaweiMoveData\Users\平面向皮卡丘\Desktop\pest-dafny)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.37s
+     Running `target\debug\pest-dafny.exe -i ./test\1.1-Dafny-Example.dfy -o results\.\1.1-Dafny-Example.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(150), line_col: Pos((7, 5)), path: None, line: "    reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\1.1-Dafny-Example.dfy -o results\.\1.1-Dafny-Example.txt` (exit code: 101)
+
+Panic: ./test\2.4-Comments.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running `target\debug\pest-dafny.exe -i ./test\2.4-Comments.dfy -o results\.\2.4-Comments.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, HashCall, Suffix, Attribute], negatives: [] }, location: Pos(50), line_col: Pos((5, 6)), path: None, line: "rest of outer comment", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\2.4-Comments.dfy -o results\.\2.4-Comments.txt` (exit code: 101)
+
+Success: ./test\4.1-Declaring-New-Modules-1.dfy
+Success: ./test\4.1-Declaring-New-Modules-2.dfy
+Success: ./test\4.1-Declaring-New-Modules-3.dfy
+Success: ./test\4.1-Declaring-New-Modules-4.dfy
+Success: ./test\4.2-Declaring-nested-modules-standalone.dfy
+Success: ./test\4.3-Importing-Modules.dfy
+Success: ./test\4.4-Opening-Modules.dfy
+Success: ./test\4.5-Export-Sets-and-Access-Control.dfy
+Success: ./test\4.5-Extends-list.dfy
+Panic: ./test\4.5-Provided-and-revealed-names-2.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running `target\debug\pest-dafny.exe -i ./test\4.5-Provided-and-revealed-names-2.dfy -o results\.\4.5-Provided-and-revealed-names-2.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [ellipsis, TopDecl], negatives: [] }, location: Pos(28), line_col: Pos((2, 18)), path: None, line: "  export reveals a", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\4.5-Provided-and-revealed-names-2.dfy -o results\.\4.5-Provided-and-revealed-names-2.txt` (exit code: 101)
+
+Panic: ./test\4.5-Provided-and-revealed-names.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\4.5-Provided-and-revealed-names.dfy -o results\.\4.5-Provided-and-revealed-names.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [ellipsis, TopDecl], negatives: [] }, location: Pos(29), line_col: Pos((2, 19)), path: None, line: "  export provides a", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\4.5-Provided-and-revealed-names.dfy -o results\.\4.5-Provided-and-revealed-names.txt` (exit code: 101)
+
+Success: ./test\4.6-Module-Abstraction.dfy
+Success: ./test\4.7-Module-Ordering-and-Dependencies.dfy
+Success: ./test\4.8-Name-Resolution.dfy
+Success: ./test\5.1-Specification-Clauses-2.dfy
+Panic: ./test\5.1-Specification-Clauses.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\5.1-Specification-Clauses.dfy -o results\.\5.1-Specification-Clauses.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(48), line_col: Pos((4, 6)), path: None, line: "  if n < 2 then n else Fib(n-2) + Fib(n-1)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\5.1-Specification-Clauses.dfy -o results\.\5.1-Specification-Clauses.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\binary-search.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\binary-search.dfy" -o "results\Dafny-programs\Algorithms + sorting\binary-search.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [Suffix], negatives: [] }, location: Pos(335), line_col: Pos((12, 21)), path: None, line: "        invariant 0 <= low <= high <= N", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\binary-search.dfy" -o "results\Dafny-programs\Algorithms + sorting\binary-search.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\binary_search.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\binary_search.dfy" -o "results\Dafny-programs\Algorithms + sorting\binary_search.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(36), line_col: Pos((2, 4)), path: None, line: "   requires a != null", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\binary_search.dfy" -o "results\Dafny-programs\Algorithms + sorting\binary_search.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\bubble-sort.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\bubble-sort.dfy" -o "results\Dafny-programs\Algorithms + sorting\bubble-sort.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(205), line_col: Pos((7, 5)), path: None, line: "    reads A", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\bubble-sort.dfy" -o "results\Dafny-programs\Algorithms + sorting\bubble-sort.txt"` (exit code: 101)
+
+Success: ./test\Dafny-programs\Algorithms + sorting\dec.dfy
+Success: ./test\Dafny-programs\Algorithms + sorting\dec2.dfy
+Panic: ./test\Dafny-programs\Algorithms + sorting\decreases_real.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\decreases_real.dfy" -o "results\Dafny-programs\Algorithms + sorting\decreases_real.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [ellipsis, DecreasesClause, ModifiesClause, Stmt, BlockStmt], negatives: [] }, location: Pos(185), line_col: Pos((9, 20)), path: None, line: "        decreases *;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\decreases_real.dfy" -o "results\Dafny-programs\Algorithms + sorting\decreases_real.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\fib.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\fib.dfy" -o "results\Dafny-programs\Algorithms + sorting\fib.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(53), line_col: Pos((4, 7)), path: None, line: "   if n == 0 then 0 else", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\fib.dfy" -o "results\Dafny-programs\Algorithms + sorting\fib.txt"` (exit code: 101)
+
+Success: ./test\Dafny-programs\Algorithms + sorting\indiscrim.dfy
+Panic: ./test\Dafny-programs\Algorithms + sorting\insertion-sort.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\insertion-sort.dfy" -o "results\Dafny-programs\Algorithms + sorting\insertion-sort.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(416), line_col: Pos((10, 5)), path: None, line: "    reads A", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\insertion-sort.dfy" -o "results\Dafny-programs\Algorithms + sorting\insertion-sort.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\lemma.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\lemma.dfy" -o "results\Dafny-programs\Algorithms + sorting\lemma.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(88), line_col: Pos((3, 20)), path: None, line: "   requires forall i :: 0 <= i < a.Length ==> 0 <= a[i]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\lemma.dfy" -o "results\Dafny-programs\Algorithms + sorting\lemma.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\lineal-search.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\lineal-search.dfy" -o "results\Dafny-programs\Algorithms + sorting\lineal-search.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [Suffix], negatives: [] }, location: Pos(252), line_col: Pos((9, 21)), path: None, line: "        invariant 0 <= i <= N", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\lineal-search.dfy" -o "results\Dafny-programs\Algorithms + sorting\lineal-search.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\max_function.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\max_function.dfy" -o "results\Dafny-programs\Algorithms + sorting\max_function.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(52), line_col: Pos((3, 7)), path: None, line: "   if a >= b then a else b", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\max_function.dfy" -o "results\Dafny-programs\Algorithms + sorting\max_function.txt"` (exit code: 101)
+
+Success: ./test\Dafny-programs\Algorithms + sorting\mymax.dfy
+Success: ./test\Dafny-programs\Algorithms + sorting\mymax2.dfy
+Panic: ./test\Dafny-programs\Algorithms + sorting\nats.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\nats.dfy" -o "results\Dafny-programs\Algorithms + sorting\nats.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, FormalsOptionalIds, TopDecl, TypeMembers], negatives: [] }, location: Pos(29), line_col: Pos((2, 28)), path: None, line: "datatype natr = Zero | Succ(natr)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\nats.dfy" -o "results\Dafny-programs\Algorithms + sorting\nats.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\string_rev.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\string_rev.dfy" -o "results\Dafny-programs\Algorithms + sorting\string_rev.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(61), line_col: Pos((2, 5)), path: None, line: "    requires |s| == |r|", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\string_rev.dfy" -o "results\Dafny-programs\Algorithms + sorting\string_rev.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Algorithms + sorting\string_rev2.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\string_rev2.dfy" -o "results\Dafny-programs\Algorithms + sorting\string_rev2.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(65), line_col: Pos((2, 5)), path: None, line: "    reads s, r", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Algorithms + sorting\string_rev2.dfy" -o "results\Dafny-programs\Algorithms + sorting\string_rev2.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\AVL-Tree\AvlNode.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\AVL-Tree\AvlNode.dfy -o results\Dafny-programs\AVL-Tree\AvlNode.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(240), line_col: Pos((12, 5)), path: None, line: "    reads this, Repr ", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\AVL-Tree\AvlNode.dfy -o results\Dafny-programs\AVL-Tree\AvlNode.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\AVL-Tree\AvlTree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\AVL-Tree\AvlTree.dfy -o results\Dafny-programs\AVL-Tree\AvlTree.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, GenericInstantiation, ClassMemberDecl], negatives: [] }, location: Pos(133), line_col: Pos((7, 23)), path: None, line: "    var root: AvlNode?;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\AVL-Tree\AvlTree.dfy -o results\Dafny-programs\AVL-Tree\AvlTree.txt` (exit code: 101)
+
+Success: ./test\Dafny-programs\AVL-Tree\Main.dfy
+Panic: ./test\Dafny-programs\Axiomatic-program-verification\Axiomatic.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Axiomatic-program-verification\Axiomatic.dfy -o results\Dafny-programs\Axiomatic-program-verification\Axiomatic.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(761), line_col: Pos((24, 8)), path: None, line: "\tmatch tree", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Axiomatic-program-verification\Axiomatic.dfy -o results\Dafny-programs\Axiomatic-program-verification\Axiomatic.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Bundle-closure\Implementation.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Implementation.dfy -o results\Dafny-programs\Bundle-closure\Implementation.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [TopDecl], negatives: [] }, location: Pos(150), line_col: Pos((8, 3)), path: None, line: "  { forall m :: m in G ==> forall n :: n in m.next ==> n in G }", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Implementation.dfy -o results\Dafny-programs\Bundle-closure\Implementation.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Bundle-closure\Interface.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Interface.dfy -o results\Dafny-programs\Bundle-closure\Interface.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(68), line_col: Pos((3, 24)), path: None, line: "    var next: set<Node>;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Interface.dfy -o results\Dafny-programs\Bundle-closure\Interface.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Bundle-closure\ndfs_final.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\ndfs_final.dfy -o results\Dafny-programs\Bundle-closure\ndfs_final.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(468), line_col: Pos((13, 22)), path: None, line: "  var next: seq<Node>;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\ndfs_final.dfy -o results\Dafny-programs\Bundle-closure\ndfs_final.txt` (exit code: 101)
+
+Success: ./test\Dafny-programs\Bundle-closure\Program.dfy
+Success: ./test\Dafny-programs\Bundle-closure\Spec.dfy
+Panic: ./test\Dafny-programs\Bundle-closure\Utils.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Utils.dfy -o results\Dafny-programs\Bundle-closure\Utils.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(136), line_col: Pos((5, 13)), path: None, line: "    ensures forall i :: 0 <= i < |s| ==> a[i] == s[i]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Bundle-closure\Utils.dfy -o results\Dafny-programs\Bundle-closure\Utils.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Counting-sort\Binary Search.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Counting-sort\Binary Search.dfy" -o "results\Dafny-programs\Counting-sort\Binary Search.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(35), line_col: Pos((2, 3)), path: None, line: "  reads a", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Counting-sort\Binary Search.dfy" -o "results\Dafny-programs\Counting-sort\Binary Search.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Counting-sort\CountingSort.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Counting-sort\CountingSort.dfy -o results\Dafny-programs\Counting-sort\CountingSort.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation], negatives: [] }, location: Pos(884), line_col: Pos((20, 37)), path: None, line: "  function filter<T>(a: seq<T>, f:T -> bool) : seq<T>", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Counting-sort\CountingSort.dfy -o results\Dafny-programs\Counting-sort\CountingSort.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Amb.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Amb.dfy" -o "results\Dafny-programs\Dafny concepts programs\Amb.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(293), line_col: Pos((14, 11)), path: None, line: "    match u", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Amb.dfy" -o "results\Dafny-programs\Dafny concepts programs\Amb.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Base64Lib.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Base64Lib.dfy" -o "results\Dafny-programs\Dafny concepts programs\Base64Lib.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [TopDecl, TypeMembers, RelOp, ShiftOp, AddOp, MulOp, BVOp, Suffix], negatives: [] }, location: Pos(168), line_col: Pos((8, 35)), path: None, line: "    newtype index = x | 0 <= x < 0x40", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Base64Lib.dfy" -o "results\Dafny-programs\Dafny concepts programs\Base64Lib.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Base64Use.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Base64Use.dfy" -o "results\Dafny-programs\Dafny concepts programs\Base64Use.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(266), line_col: Pos((11, 26)), path: None, line: "         requires forall k :: 0 <= k < |msg| ==> 0 <= msg[k] as int < 0x100", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Base64Use.dfy" -o "results\Dafny-programs\Dafny concepts programs\Base64Use.txt"` (exit code: 101)
+
+Success: ./test\Dafny-programs\Dafny concepts programs\bedrock2MMIO.dfy
+Panic: ./test\Dafny-programs\Dafny concepts programs\BinarySearch.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\BinarySearch.dfy" -o "results\Dafny-programs\Dafny concepts programs\BinarySearch.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(127), line_col: Pos((5, 19)), path: None, line: "  requires forall i,j :: 0 <= i < j < a.Length ==> a[i] <= a[j]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\BinarySearch.dfy" -o "results\Dafny-programs\Dafny concepts programs\BinarySearch.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\BinaryTree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\BinaryTree.dfy" -o "results\Dafny-programs\Dafny concepts programs\BinaryTree.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(131), line_col: Pos((10, 5)), path: None, line: "    reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\BinaryTree.dfy" -o "results\Dafny-programs\Dafny concepts programs\BinaryTree.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\ChurchNats.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\ChurchNats.dfy" -o "results\Dafny-programs\Dafny concepts programs\ChurchNats.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(204), line_col: Pos((12, 15)), path: None, line: "        match this {", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\ChurchNats.dfy" -o "results\Dafny-programs\Dafny concepts programs\ChurchNats.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Disjointness.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Disjointness.dfy" -o "results\Dafny-programs\Dafny concepts programs\Disjointness.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(90), line_col: Pos((5, 23)), path: None, line: "    predicate Valid() reads this, Repr {", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Disjointness.dfy" -o "results\Dafny-programs\Dafny concepts programs\Disjointness.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\DynamicFrames.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\DynamicFrames.dfy" -o "results\Dafny-programs\Dafny concepts programs\DynamicFrames.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(84), line_col: Pos((5, 9)), path: None, line: "        reads this", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\DynamicFrames.dfy" -o "results\Dafny-programs\Dafny concepts programs\DynamicFrames.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\FlyingRobots.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\FlyingRobots.dfy" -o "results\Dafny-programs\Dafny concepts programs\FlyingRobots.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(342), line_col: Pos((19, 5)), path: None, line: "    reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\FlyingRobots.dfy" -o "results\Dafny-programs\Dafny concepts programs\FlyingRobots.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\ITree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\ITree.dfy" -o "results\Dafny-programs\Dafny concepts programs\ITree.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [Type], negatives: [] }, location: Pos(154), line_col: Pos((4, 33)), path: None, line: "| IOut(msg: string, void_cont: () -> ITree<A>)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\ITree.dfy" -o "results\Dafny-programs\Dafny concepts programs\ITree.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Maps.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Maps.dfy" -o "results\Dafny-programs\Dafny concepts programs\Maps.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(56), line_col: Pos((2, 55)), path: None, line: "predicate Extends<K, V>(m1: map<K, V>, m2: map<K, V>) {", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Maps.dfy" -o "results\Dafny-programs\Dafny concepts programs\Maps.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.dfy" -o "results\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(272), line_col: Pos((12, 9)), path: None, line: "  match xs", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.dfy" -o "results\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\SplitMaps.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\SplitMaps.dfy" -o "results\Dafny-programs\Dafny concepts programs\SplitMaps.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(578), line_col: Pos((21, 17)), path: None, line: "requires forall M, A, B :: split(M, A, B) <==> (forall k :: ", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\SplitMaps.dfy" -o "results\Dafny-programs\Dafny concepts programs\SplitMaps.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\Std.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Std.dfy" -o "results\Dafny-programs\Dafny concepts programs\Std.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [TopDecl, TypeMembers, RelOp, ShiftOp, AddOp, MulOp, BVOp, Suffix], negatives: [] }, location: Pos(53), line_col: Pos((5, 34)), path: None, line: "  newtype uint8 =  x | 0 <= x < 0x100", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\Std.dfy" -o "results\Dafny-programs\Dafny concepts programs\Std.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\UnionFind.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\UnionFind.dfy" -o "results\Dafny-programs\Dafny concepts programs\UnionFind.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [PrimaryExpression], negatives: [] }, location: Pos(270), line_col: Pos((9, 24)), path: None, line: "  class {:autocontracts} UnionFind {", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\UnionFind.dfy" -o "results\Dafny-programs\Dafny concepts programs\UnionFind.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny concepts programs\WrappedCounters.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\WrappedCounters.dfy" -o "results\Dafny-programs\Dafny concepts programs\WrappedCounters.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(1120), line_col: Pos((47, 27)), path: None, line: "        predicate Valid() reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny concepts programs\WrappedCounters.dfy" -o "results\Dafny-programs\Dafny concepts programs\WrappedCounters.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Calculations.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Calculations.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Calculations.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(262), line_col: Pos((11, 9)), path: None, line: "  match l", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Calculations.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Calculations.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Cubes.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Cubes.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Cubes.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(153), line_col: Pos((6, 18)), path: None, line: "  ensures forall i :: 0 <= i < a.Length ==> a[i] == i*i*i", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Cubes.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Cubes.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Dijkstra.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Dijkstra.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Dijkstra.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(457), line_col: Pos((13, 1)), path: None, line: "{", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Dijkstra.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Dijkstra.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Induction.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Induction.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Induction.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, RequiresClause, EnsuresClause, DecreasesClause, ReadsClause, GenericInstantiation, ClassMemberDecl, FunctionBody, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(434), line_col: Pos((12, 20)), path: None, line: "    requires 0 <= n;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Induction.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Induction.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Intervals.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Intervals.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Intervals.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(345), line_col: Pos((13, 12)), path: None, line: "    forall m,n :: 0 <= m < n < thresholds.Length ==> thresholds[m] <= thresholds[n]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Intervals.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Intervals.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\ListCopy.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\ListCopy.dfy" -o "results\Dafny-programs\Dafny Formal Methods\ListCopy.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(399), line_col: Pos((19, 20)), path: None, line: "    assume (forall o: Node :: o in existingRegion && o.nxt != null ==> o.nxt in existingRegion);", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\ListCopy.dfy" -o "results\Dafny-programs\Dafny Formal Methods\ListCopy.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\ListReverse.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\ListReverse.dfy" -o "results\Dafny-programs\Dafny Formal Methods\ListReverse.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, ClassMemberDecl, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(233), line_col: Pos((8, 33)), path: None, line: "    requires x == null || x in r;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\ListReverse.dfy" -o "results\Dafny-programs\Dafny Formal Methods\ListReverse.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\MoreInduction.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\MoreInduction.dfy" -o "results\Dafny-programs\Dafny Formal Methods\MoreInduction.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ReadsClause, FunctionBody, RelOp, ShiftOp, AddOp, MulOp, BVOp, Suffix], negatives: [] }, location: Pos(291), line_col: Pos((8, 36)), path: None, line: "  ensures IsFlat(FlattenMain(list));", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\MoreInduction.dfy" -o "results\Dafny-programs\Dafny Formal Methods\MoreInduction.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\pow2.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\pow2.dfy" -o "results\Dafny-programs\Dafny Formal Methods\pow2.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ReadsClause, GenericInstantiation, FunctionBody, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(211), line_col: Pos((7, 18)), path: None, line: "  requires 0 <= n;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\pow2.dfy" -o "results\Dafny-programs\Dafny Formal Methods\pow2.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\PredExpr.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\PredExpr.dfy" -o "results\Dafny-programs\Dafny Formal Methods\PredExpr.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ReadsClause, FunctionBody, RelOp, ShiftOp, AddOp, MulOp, BVOp, Suffix], negatives: [] }, location: Pos(164), line_col: Pos((5, 18)), path: None, line: "  ensures n < 100;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\PredExpr.dfy" -o "results\Dafny-programs\Dafny Formal Methods\PredExpr.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\SegmentSum.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\SegmentSum.dfy" -o "results\Dafny-programs\Dafny Formal Methods\SegmentSum.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(180), line_col: Pos((7, 6)), path: None, line: "  if s == t then 0 else Sum(a, s, t-1) + a[t-1]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\SegmentSum.dfy" -o "results\Dafny-programs\Dafny Formal Methods\SegmentSum.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\Substitution.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Substitution.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Substitution.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(279), line_col: Pos((13, 9)), path: None, line: "  match e", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\Substitution.dfy" -o "results\Dafny-programs\Dafny Formal Methods\Substitution.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny Formal Methods\SumOfCubes.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\SumOfCubes.dfy" -o "results\Dafny-programs\Dafny Formal Methods\SumOfCubes.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, RequiresClause, EnsuresClause, DecreasesClause, ReadsClause, GenericInstantiation, ClassMemberDecl, FunctionBody, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(190), line_col: Pos((6, 30)), path: None, line: "    requires 0 <= n && n <= m;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Dafny Formal Methods\SumOfCubes.dfy" -o "results\Dafny-programs\Dafny Formal Methods\SumOfCubes.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\binarysearch.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\binarysearch.dfy -o results\Dafny-programs\Dafny-functions\binarysearch.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(35), line_col: Pos((2, 3)), path: None, line: "  reads a", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\binarysearch.dfy -o results\Dafny-programs\Dafny-functions\binarysearch.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\expt.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\expt.dfy -o results\Dafny-programs\Dafny-functions\expt.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(63), line_col: Pos((4, 6)), path: None, line: "  if n == 0 then 1 else b * Expt(b, n - 1)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\expt.dfy -o results\Dafny-programs\Dafny-functions\expt.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\factorial.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\factorial.dfy -o results\Dafny-programs\Dafny-functions\factorial.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(65), line_col: Pos((4, 8)), path: None, line: "    if n == 0 then 1 else n * fact(n - 1)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\factorial.dfy -o results\Dafny-programs\Dafny-functions\factorial.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\fermat.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\fermat.dfy -o results\Dafny-programs\Dafny-functions\fermat.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(75), line_col: Pos((4, 8)), path: None, line: "    if n == 0 then 1 else a * power(a, n - 1)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\fermat.dfy -o results\Dafny-programs\Dafny-functions\fermat.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\find.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\find.dfy -o results\Dafny-programs\Dafny-functions\find.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(154), line_col: Pos((3, 33)), path: None, line: "   ensures index < 0 ==> forall k :: 0 <= k < a.Length ==> a[k] != key", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\find.dfy -o results\Dafny-programs\Dafny-functions\find.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\fsa.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\fsa.dfy -o results\Dafny-programs\Dafny-functions\fsa.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(402), line_col: Pos((8, 14)), path: None, line: "    requires transitions == [[1, 0], [1, 0]]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\fsa.dfy -o results\Dafny-programs\Dafny-functions\fsa.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\functions.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\functions.dfy -o results\Dafny-programs\Dafny-functions\functions.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation], negatives: [] }, location: Pos(35), line_col: Pos((2, 25)), path: None, line: "function double<T>(f: T -> T): T -> T ", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\functions.dfy -o results\Dafny-programs\Dafny-functions\functions.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\increment.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\increment.dfy -o results\Dafny-programs\Dafny-functions\increment.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(78), line_col: Pos((4, 8)), path: None, line: "    if n == 0 then 1 else", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\increment.dfy -o results\Dafny-programs\Dafny-functions\increment.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\interp.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\interp.dfy -o results\Dafny-programs\Dafny-functions\interp.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(1338), line_col: Pos((51, 11)), path: None, line: "    match e { ", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\interp.dfy -o results\Dafny-programs\Dafny-functions\interp.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\max.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\max.dfy -o results\Dafny-programs\Dafny-functions\max.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(322), line_col: Pos((22, 6)), path: None, line: "  if a > b then a else b", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\max.dfy -o results\Dafny-programs\Dafny-functions\max.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\rationalnumbers.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\rationalnumbers.dfy -o results\Dafny-programs\Dafny-functions\rationalnumbers.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(361), line_col: Pos((22, 1)), path: None, line: "{", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\rationalnumbers.dfy -o results\Dafny-programs\Dafny-functions\rationalnumbers.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\sequences.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\sequences.dfy -o results\Dafny-programs\Dafny-functions\sequences.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(322), line_col: Pos((18, 12)), path: None, line: "   ensures update(s, i, v) == s[i := v]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\sequences.dfy -o results\Dafny-programs\Dafny-functions\sequences.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\set.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\set.dfy -o results\Dafny-programs\Dafny-functions\set.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(64), line_col: Pos((3, 15)), path: None, line: "  assert (set x: int | x in {-2, -1, 0, 1, 2} :: x * 2) == {-4, -2, 0, 2, 4};", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\set.dfy -o results\Dafny-programs\Dafny-functions\set.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-functions\vectors.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\vectors.dfy -o results\Dafny-programs\Dafny-functions\vectors.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(256), line_col: Pos((8, 18)), path: None, line: "  ensures forall k :: 0 <= k < v2.Length ==> v2[k] == v[k] * scalar", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-functions\vectors.dfy -o results\Dafny-programs\Dafny-functions\vectors.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Dafny-Set-Implementation\Set.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-Set-Implementation\Set.dfy -o results\Dafny-programs\Dafny-Set-Implementation\Set.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [PrimaryExpression], negatives: [] }, location: Pos(25), line_col: Pos((3, 22)), path: None, line: "class {:autocontracts} Conjunto", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Dafny-Set-Implementation\Set.dfy -o results\Dafny-programs\Dafny-Set-Implementation\Set.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\BinaryTree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\BinaryTree.dfy" -o "results\Dafny-programs\Data structures\BinaryTree.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(220), line_col: Pos((11, 5)), path: None, line: "    reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\BinaryTree.dfy" -o "results\Dafny-programs\Data structures\BinaryTree.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\List.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\List.dfy" -o "results\Dafny-programs\Data structures\List.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(29), line_col: Pos((2, 16)), path: None, line: "  var data: int;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\List.dfy" -o "results\Dafny-programs\Data structures\List.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\MatrixFun.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\MatrixFun.dfy" -o "results\Dafny-programs\Data structures\MatrixFun.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(161), line_col: Pos((6, 18)), path: None, line: "  ensures forall i,j :: 0 <= i < m.Length0 && 0 <= j < m.Length1 ==>", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\MatrixFun.dfy" -o "results\Dafny-programs\Data structures\MatrixFun.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\pow.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\pow.dfy" -o "results\Dafny-programs\Data structures\pow.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [RelOp, ShiftOp, AddOp, MulOp, BVOp, Suffix], negatives: [] }, location: Pos(93), line_col: Pos((4, 12)), path: None, line: "\tif (N==0) then 1 else A * power(A,N-1)", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\pow.dfy" -o "results\Dafny-programs\Data structures\pow.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\PriorityQueue.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\PriorityQueue.dfy" -o "results\Dafny-programs\Data structures\PriorityQueue.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(369), line_col: Pos((12, 5)), path: None, line: "    reads this, Repr", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\PriorityQueue.dfy" -o "results\Dafny-programs\Data structures\PriorityQueue.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\Queue.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Queue.dfy" -o "results\Dafny-programs\Data structures\Queue.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(354), line_col: Pos((17, 5)), path: None, line: "    reads this, footprint", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Queue.dfy" -o "results\Dafny-programs\Data structures\Queue.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\short_tree_example.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\short_tree_example.dfy" -o "results\Dafny-programs\Data structures\short_tree_example.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(190), line_col: Pos((6, 1)), path: None, line: "{", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\short_tree_example.dfy" -o "results\Dafny-programs\Data structures\short_tree_example.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\simpleTree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\simpleTree.dfy" -o "results\Dafny-programs\Data structures\simpleTree.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(154), line_col: Pos((5, 1)), path: None, line: "{", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\simpleTree.dfy" -o "results\Dafny-programs\Data structures\simpleTree.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\Stack.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Stack.dfy" -o "results\Dafny-programs\Data structures\Stack.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(115), line_col: Pos((6, 25)), path: None, line: "      var capacity : int; // capacity, max number of elements allowed on the stack.", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Stack.dfy" -o "results\Dafny-programs\Data structures\Stack.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\Tree.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Tree.dfy" -o "results\Dafny-programs\Data structures\Tree.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(586), line_col: Pos((14, 1)), path: None, line: "{", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\Tree.dfy" -o "results\Dafny-programs\Data structures\Tree.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\TreeDatatype.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\TreeDatatype.dfy" -o "results\Dafny-programs\Data structures\TreeDatatype.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(275), line_col: Pos((12, 9)), path: None, line: "  match t", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\TreeDatatype.dfy" -o "results\Dafny-programs\Data structures\TreeDatatype.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Data structures\UnboundedStack.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\UnboundedStack.dfy" -o "results\Dafny-programs\Data structures\UnboundedStack.txt"`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(249), line_col: Pos((10, 5)), path: None, line: "    reads this, representation", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i "./test\Dafny-programs\Data structures\UnboundedStack.dfy" -o "results\Dafny-programs\Data structures\UnboundedStack.txt"` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Lemma-body\FindZero.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\FindZero.dfy -o results\Dafny-programs\Lemma-body\FindZero.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(71), line_col: Pos((2, 19)), path: None, line: "  requires forall i :: 0 <= i < a.Length ==> 0 <= a[i]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\FindZero.dfy -o results\Dafny-programs\Lemma-body\FindZero.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Lemma-body\lemma.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\lemma.dfy -o results\Dafny-programs\Lemma-body\lemma.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl, RequiresClause, EnsuresClause, DecreasesClause, ModifiesClause, GenericInstantiation, BlockStmt, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(72), line_col: Pos((2, 20)), path: None, line: "   requires forall i :: 0 <= i < a.Length ==> 0 <= a[i]", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\lemma.dfy -o results\Dafny-programs\Lemma-body\lemma.txt` (exit code: 101)
+
+Success: ./test\Dafny-programs\Lemma-body\MultiReturns.dfy
+Panic: ./test\Dafny-programs\Lemma-body\toy.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\toy.dfy -o results\Dafny-programs\Lemma-body\toy.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(31), line_col: Pos((2, 17)), path: None, line: "  var N_LAS: int;", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Lemma-body\toy.dfy -o results\Dafny-programs\Lemma-body\toy.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\SmartContractVerification\auction.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\auction.dfy -o results\Dafny-programs\SmartContractVerification\auction.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(257), line_col: Pos((15, 5)), path: None, line: "    reads this", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\auction.dfy -o results\Dafny-programs\SmartContractVerification\auction.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\SmartContractVerification\contract.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\contract.dfy -o results\Dafny-programs\SmartContractVerification\contract.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [GenericInstantiation, RelOp, ShiftOp, AddOp, MulOp, BVOp, HashCall, Suffix], negatives: [] }, location: Pos(606), line_col: Pos((24, 16)), path: None, line: "            if payer.balance == 0 then true else false", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\contract.dfy -o results\Dafny-programs\SmartContractVerification\contract.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\SmartContractVerification\lottery.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\lottery.dfy -o results\Dafny-programs\SmartContractVerification\lottery.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(231), line_col: Pos((11, 9)), path: None, line: "        ensures isManager() ==> msg.sender == manager", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\lottery.dfy -o results\Dafny-programs\SmartContractVerification\lottery.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\SmartContractVerification\manufacturer.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\manufacturer.dfy -o results\Dafny-programs\SmartContractVerification\manufacturer.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [DeclModifier, ClassMemberDecl], negatives: [] }, location: Pos(357), line_col: Pos((20, 9)), path: None, line: "        ensures this.msg.sender == msg.sender == manufacturer", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\SmartContractVerification\manufacturer.dfy -o results\Dafny-programs\SmartContractVerification\manufacturer.txt` (exit code: 101)
+
+Panic: ./test\Dafny-programs\Sorted-set\main.dfy
+Error message:     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Sorted-set\main.dfy -o results\Dafny-programs\Sorted-set\main.txt`
+thread 'main' panicked at src/main.rs:47:9:
+Error { variant: ParsingError { positives: [EOI, TopDecl], negatives: [] }, location: Pos(229), line_col: Pos((7, 31)), path: None, line: "predicate isSorted(s: seq<T>) {", continued_line: None, parse_attempts: None }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: process didn't exit successfully: `target\debug\pest-dafny.exe -i ./test\Dafny-programs\Sorted-set\main.dfy -o results\Dafny-programs\Sorted-set\main.txt` (exit code: 101)
+
+
+统计信息: 
+总文件数: 113
+成功的文件数: 23
+Panic 的文件数: 90
+Panic 的文件列表:
+- ./test\1.1-Dafny-Example.dfy
+- ./test\2.4-Comments.dfy
+- ./test\4.5-Provided-and-revealed-names-2.dfy
+- ./test\4.5-Provided-and-revealed-names.dfy
+- ./test\5.1-Specification-Clauses.dfy
+- ./test\Dafny-programs\Algorithms + sorting\binary-search.dfy
+- ./test\Dafny-programs\Algorithms + sorting\binary_search.dfy
+- ./test\Dafny-programs\Algorithms + sorting\bubble-sort.dfy
+- ./test\Dafny-programs\Algorithms + sorting\decreases_real.dfy
+- ./test\Dafny-programs\Algorithms + sorting\fib.dfy
+- ./test\Dafny-programs\Algorithms + sorting\insertion-sort.dfy
+- ./test\Dafny-programs\Algorithms + sorting\lemma.dfy
+- ./test\Dafny-programs\Algorithms + sorting\lineal-search.dfy
+- ./test\Dafny-programs\Algorithms + sorting\max_function.dfy
+- ./test\Dafny-programs\Algorithms + sorting\nats.dfy
+- ./test\Dafny-programs\Algorithms + sorting\string_rev.dfy
+- ./test\Dafny-programs\Algorithms + sorting\string_rev2.dfy
+- ./test\Dafny-programs\AVL-Tree\AvlNode.dfy
+- ./test\Dafny-programs\AVL-Tree\AvlTree.dfy
+- ./test\Dafny-programs\Axiomatic-program-verification\Axiomatic.dfy
+- ./test\Dafny-programs\Bundle-closure\Implementation.dfy
+- ./test\Dafny-programs\Bundle-closure\Interface.dfy
+- ./test\Dafny-programs\Bundle-closure\ndfs_final.dfy
+- ./test\Dafny-programs\Bundle-closure\Utils.dfy
+- ./test\Dafny-programs\Counting-sort\Binary Search.dfy
+- ./test\Dafny-programs\Counting-sort\CountingSort.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Amb.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Base64Lib.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Base64Use.dfy
+- ./test\Dafny-programs\Dafny concepts programs\BinarySearch.dfy
+- ./test\Dafny-programs\Dafny concepts programs\BinaryTree.dfy
+- ./test\Dafny-programs\Dafny concepts programs\ChurchNats.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Disjointness.dfy
+- ./test\Dafny-programs\Dafny concepts programs\DynamicFrames.dfy
+- ./test\Dafny-programs\Dafny concepts programs\FlyingRobots.dfy
+- ./test\Dafny-programs\Dafny concepts programs\ITree.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Maps.dfy
+- ./test\Dafny-programs\Dafny concepts programs\NipkowKlein-chapter3.dfy
+- ./test\Dafny-programs\Dafny concepts programs\SplitMaps.dfy
+- ./test\Dafny-programs\Dafny concepts programs\Std.dfy
+- ./test\Dafny-programs\Dafny concepts programs\UnionFind.dfy
+- ./test\Dafny-programs\Dafny concepts programs\WrappedCounters.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Calculations.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Cubes.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Dijkstra.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Induction.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Intervals.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\ListCopy.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\ListReverse.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\MoreInduction.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\pow2.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\PredExpr.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\SegmentSum.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\Substitution.dfy
+- ./test\Dafny-programs\Dafny Formal Methods\SumOfCubes.dfy
+- ./test\Dafny-programs\Dafny-functions\binarysearch.dfy
+- ./test\Dafny-programs\Dafny-functions\expt.dfy
+- ./test\Dafny-programs\Dafny-functions\factorial.dfy
+- ./test\Dafny-programs\Dafny-functions\fermat.dfy
+- ./test\Dafny-programs\Dafny-functions\find.dfy
+- ./test\Dafny-programs\Dafny-functions\fsa.dfy
+- ./test\Dafny-programs\Dafny-functions\functions.dfy
+- ./test\Dafny-programs\Dafny-functions\increment.dfy
+- ./test\Dafny-programs\Dafny-functions\interp.dfy
+- ./test\Dafny-programs\Dafny-functions\max.dfy
+- ./test\Dafny-programs\Dafny-functions\rationalnumbers.dfy
+- ./test\Dafny-programs\Dafny-functions\sequences.dfy
+- ./test\Dafny-programs\Dafny-functions\set.dfy
+- ./test\Dafny-programs\Dafny-functions\vectors.dfy
+- ./test\Dafny-programs\Dafny-Set-Implementation\Set.dfy
+- ./test\Dafny-programs\Data structures\BinaryTree.dfy
+- ./test\Dafny-programs\Data structures\List.dfy
+- ./test\Dafny-programs\Data structures\MatrixFun.dfy
+- ./test\Dafny-programs\Data structures\pow.dfy
+- ./test\Dafny-programs\Data structures\PriorityQueue.dfy
+- ./test\Dafny-programs\Data structures\Queue.dfy
+- ./test\Dafny-programs\Data structures\short_tree_example.dfy
+- ./test\Dafny-programs\Data structures\simpleTree.dfy
+- ./test\Dafny-programs\Data structures\Stack.dfy
+- ./test\Dafny-programs\Data structures\Tree.dfy
+- ./test\Dafny-programs\Data structures\TreeDatatype.dfy
+- ./test\Dafny-programs\Data structures\UnboundedStack.dfy
+- ./test\Dafny-programs\Lemma-body\FindZero.dfy
+- ./test\Dafny-programs\Lemma-body\lemma.dfy
+- ./test\Dafny-programs\Lemma-body\toy.dfy
+- ./test\Dafny-programs\SmartContractVerification\auction.dfy
+- ./test\Dafny-programs\SmartContractVerification\contract.dfy
+- ./test\Dafny-programs\SmartContractVerification\lottery.dfy
+- ./test\Dafny-programs\SmartContractVerification\manufacturer.dfy
+- ./test\Dafny-programs\Sorted-set\main.dfy

@@ -1,0 +1,21 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            GenericInstantiation,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        35,
+    ),
+    line_col: Pos(
+        (
+            2,
+            25,
+        ),
+    ),
+    path: None,
+    line: "function double<T>(f: T -> T): T -> T ",
+    continued_line: None,
+    parse_attempts: None,
+}

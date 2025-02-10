@@ -1,0 +1,33 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            EOI,
+            TopDecl,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ReadsClause,
+            FunctionBody,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        164,
+    ),
+    line_col: Pos(
+        (
+            5,
+            18,
+        ),
+    ),
+    path: None,
+    line: "  ensures n < 100;",
+    continued_line: None,
+    parse_attempts: None,
+}

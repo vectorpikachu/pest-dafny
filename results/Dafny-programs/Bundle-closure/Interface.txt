@@ -1,0 +1,22 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            DeclModifier,
+            ClassMemberDecl,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        68,
+    ),
+    line_col: Pos(
+        (
+            3,
+            24,
+        ),
+    ),
+    path: None,
+    line: "    var next: set<Node>;",
+    continued_line: None,
+    parse_attempts: None,
+}

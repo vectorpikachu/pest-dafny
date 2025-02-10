@@ -10,13 +10,13 @@ cr         = _{ "\r" }
 lf         = _{ "\n" }
 tab        = _{ "\t" }
 space      = _{ " " }
-WHITESPACE = _{ space | tab | cr | lf }
+
 
 COMMENT = _{ "//" ~ (!lf ~ ANY)* ~ lf | "/*" ~ (!("*/") ~ ANY)* ~ "*/" }
 
 nondigitIdChar = _{ letter | special }
 idchar         = _{ nondigitIdChar | digit }
-// nonidchar      = _{ !idchar ~ ANY } !unused
+nonidchar      = _{ !idchar ~ ANY }
 
 charChar           = _{ !("\'" | "\\" | cr | lf) ~ ANY }
 stringChar         = _{ !("\"" | "\\" | cr | lf) ~ ANY }
@@ -57,11 +57,11 @@ reservedword = _{
   | "if"
   | "imap"
   | "import"
-  | "in"
-  | "include"
-  | "inductive"
-  | "int"
   | "invariant"
+  | "inductive"
+  | "include"
+  | "int"
+  | "in"
   | "is"
   | "iset"
   | "iterator"
@@ -115,7 +115,11 @@ reservedword = _{
   | bvToken
 }
 
-ident = _{ !(charToken | reservedword) ~ nondigitIdChar ~ idchar* }
+// Do not exclude reservedwords here. As ident can contain a reservedword,
+// which prevents the parser from matching the ident.
+// Or rather, trailing with a special ch.
+// Failed because of the greedy match and WHITESPECES here.
+ident = _{ !(charToken | reservedword ~ nonidchar) ~ nondigitIdChar ~ idchar* }
 
 digits        = _{ digit ~ ("_"? ~ digit)* }
 hexdigits     = _{ "0x" ~ hexdigit ~ ("_"? ~ hexdigit)* }
@@ -181,8 +185,11 @@ FormalsOptionalIds     = {
 Nat = { digits | hexdigits }
 Dec = { decimaldigits }
 
+WHITESPACE = _{ space | tab | cr | lf }
+
 // Programs
-Dafny             =  { IncludeDirective_* ~ TopDecl* }
+Dafny             =  { SOI ~ IncludeDirective_* ~ TopDecl* ~ EOI }
+// If I add a SOI and EOI here, it will cause strange errors. Don't know why.
 IncludeDirective_ = _{ "include" ~ stringToken }
 TopDecl           =  {
     DeclModifier* ~ (SubModuleDecl
@@ -240,24 +247,25 @@ ReadsClause                 =  {
 ModifiesClause              =  { "modifies" ~ Attribute? ~ FrameExpression ~ ("," ~ FrameExpression)* }
 InvariantClause_            = _{ "invariant" ~ Attribute* ~ Expression }
 
+// Make all specs not empty, and add a ? to the rule that use them
 MethodSpec = {
-    (ModifiesClause | RequiresClause | EnsuresClause | DecreasesClause)*
+    (ModifiesClause | RequiresClause | EnsuresClause | DecreasesClause)+
 }
 
 FucntionSpec = {
-    (RequiresClause | ReadsClause | EnsuresClause | DecreasesClause)*
+    (RequiresClause | ReadsClause | EnsuresClause | DecreasesClause)+
 }
 
 LambdaSpec = {
-    (ReadsClause | RequiresClause)*
+    (ReadsClause | RequiresClause)+
 }
 
 IteratorSpec = {
-    (ReadsClause | ModifiesClause | "yields" ~ RequiresClause | "yield" ~ EnsuresClause | DecreasesClause)*
+    (ReadsClause | ModifiesClause | "yields" ~ RequiresClause | "yield" ~ EnsuresClause | DecreasesClause)+
 }
 
 LoopSpec = {
-    (InvariantClause_ | DecreasesClause | ModifiesClause)*
+    (InvariantClause_ | DecreasesClause | ModifiesClause)+
 }
 
 // Types
@@ -348,9 +356,9 @@ ClassDecl         = {
 }
 ClassMemberDecl   = {
     FieldDecl
+  | MethodDecl // As 'constructor' contains 'const', we must first try to match it.
   | ConstantFieldDecl
   | FunctionDecl
-  | MethodDecl
 }
 FieldDecl         = {
     "var" ~ Attribute* ~ FIdentType ~ ("," ~ FIdentType)*
@@ -359,7 +367,7 @@ ConstantFieldDecl = {
     "const" ~ Attribute* ~ CIdentType ~ ellipsis? ~ (":=" ~ Expression)?
 }
 MethodDecl        = {
-    MethodKeyword_ ~ Attribute* ~ MethodFunctionName? ~ (MethodSignature_ | ellipsis) ~ MethodSpec ~ BlockStmt?
+    MethodKeyword_ ~ Attribute* ~ MethodFunctionName? ~ (MethodSignature_ | ellipsis) ~ MethodSpec? ~ BlockStmt?
 }
 MethodKeyword_    = _{
     "method"
@@ -378,7 +386,7 @@ Formals           = {
 }
 
 FunctionDecl = {
-    ("twostate"? ~ "function" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ FunctionSignatureOrEllipsis_ | "predicate" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_ | ("least" | "greatest") ~ "predicate" ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_) ~ FucntionSpec ~ FunctionBody?
+    ("twostate"? ~ "function" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ FunctionSignatureOrEllipsis_ | ("least" | "greatest") ~ "predicate" ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_ | "predicate" ~ "method"? ~ Attribute* ~ MethodFunctionName ~ PredicateSignatureOrEllipsis_) ~ FucntionSpec? ~ FunctionBody?
 }
 
 FunctionSignatureOrEllipsis_  = _{
@@ -410,7 +418,7 @@ ArrayType_ = _{ arrayToken ~ GenericInstantiation? }
 
 // Iterator Types
 IteratorDecl = {
-    "iterator" ~ Attribute* ~ IteratorName ~ (GenericParameters? ~ Formals ~ ("yields" ~ Formals)? | ellipsis) ~ IteratorSpec ~ BlockStmt?
+    "iterator" ~ Attribute* ~ IteratorName ~ (GenericParameters? ~ Formals ~ ("yields" ~ Formals)? | ellipsis) ~ IteratorSpec? ~ BlockStmt?
 }
 
 // Arrow Types
@@ -516,11 +524,11 @@ AlternativeBlockCase = {
 }
 
 WhileStmt = {
-    "while" ~ (LoopSpec ~ AlternativeBlock | (Guard | ellipsis) ~ LoopSpec ~ (BlockStmt | ellipsis)?)
+    "while" ~ (LoopSpec? ~ AlternativeBlock | (Guard | ellipsis) ~ LoopSpec? ~ (BlockStmt | ellipsis)?)
 }
 
 ForLoopStmt = {
-    "for" ~ IdentTypeOptional ~ ":=" ~ Expression ~ ("to" | "downto") ~ (Expression | "*") ~ LoopSpec ~ BlockStmt?
+    "for" ~ IdentTypeOptional ~ ":=" ~ Expression ~ ("to" | "downto") ~ (Expression | "*") ~ LoopSpec? ~ BlockStmt?
 }
 
 MatchStmt = {
@@ -629,7 +637,7 @@ PrimaryExpression = {
 }
 
 LambdaExpression = {
-    (WildIdent | "(" ~ (IdentTypeOptional ~ ("," ~ IdentTypeOptional)*)? ~ ")") ~ LambdaSpec ~ "=>" ~ Expression
+    (WildIdent | "(" ~ (IdentTypeOptional ~ ("," ~ IdentTypeOptional)*)? ~ ")") ~ LambdaSpec? ~ "=>" ~ Expression
 }
 
 Lhs = {

@@ -1,0 +1,25 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            ellipsis,
+            DecreasesClause,
+            ModifiesClause,
+            Stmt,
+            BlockStmt,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        185,
+    ),
+    line_col: Pos(
+        (
+            9,
+            20,
+        ),
+    ),
+    path: None,
+    line: "        decreases *;",
+    continued_line: None,
+    parse_attempts: None,
+}

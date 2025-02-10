@@ -1,0 +1,26 @@
+Error {
+    variant: ParsingError {
+        positives: [
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
+        ],
+        negatives: [],
+    },
+    location: Pos(
+        93,
+    ),
+    line_col: Pos(
+        (
+            4,
+            12,
+        ),
+    ),
+    path: None,
+    line: "\tif (N==0) then 1 else A * power(A,N-1)",
+    continued_line: None,
+    parse_attempts: None,
+}

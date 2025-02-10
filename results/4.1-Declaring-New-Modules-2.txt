@@ -1,13 +1,14 @@
-- Dafny > TopDecl > SubModuleDecl > ModuleDefinition 
-    - QualifiedModuleName 
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "Mod"
     - TopDecl > SubModuleDecl > ModuleDefinition 
-       - QualifiedModuleName 
-       - TopDecl > ClassDecl 
-         - ClassName 
-         - ClassMemberDecl > MethodDecl 
-           - MethodFunctionName 
-           - Formals 
-           - MethodSpec 
-         - ClassMemberDecl > FieldDecl > FIdentType 
-            - NoUSIdentOrDigits 
-            - Type 
+      - QualifiedModuleName > "Helpers"
+      - TopDecl > ClassDecl 
+        - ClassName > "C"
+        - ClassMemberDecl > MethodDecl 
+          - MethodFunctionName > "doIt"
+          - Formals > "()"
+        - ClassMemberDecl > FieldDecl > FIdentType 
+          - NoUSIdentOrDigits > "f"
+          - Type > "int"
+  - EOI > ""
