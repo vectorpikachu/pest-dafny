@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        293,
+        343,
     ),
     line_col: Pos(
         (
-            14,
-            11,
+            17,
+            10,
         ),
     ),
     path: None,
-    line: "    match u",
+    line: "    case Ite(c, t1, t2) => Ite(Subst(x, t, c), Subst(x, t, t1), Subst(x, t, t2))",
     continued_line: None,
     parse_attempts: None,
 }

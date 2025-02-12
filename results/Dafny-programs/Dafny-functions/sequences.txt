@@ -1,28 +1,26 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
             RelOp,
             ShiftOp,
             AddOp,
             MulOp,
             BVOp,
-            HashCall,
             Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        322,
+        993,
     ),
     line_col: Pos(
         (
-            18,
-            12,
+            49,
+            1,
         ),
     ),
     path: None,
-    line: "   ensures update(s, i, v) == s[i := v]",
+    line: "function Reverse<T>(a: seq<T>): seq<T>",
     continued_line: None,
     parse_attempts: None,
 }

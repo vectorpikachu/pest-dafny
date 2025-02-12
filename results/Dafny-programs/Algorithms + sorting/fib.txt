@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
             Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        53,
+        301,
     ),
     line_col: Pos(
         (
-            4,
-            7,
+            16,
+            19,
         ),
     ),
     path: None,
-    line: "   if n == 0 then 0 else",
+    line: "      invariant 0 <= i <= n",
     continued_line: None,
     parse_attempts: None,
 }

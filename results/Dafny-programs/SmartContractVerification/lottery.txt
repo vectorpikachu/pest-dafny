@@ -1,22 +1,136 @@
-Error {
-    variant: ParsingError {
-        positives: [
-            DeclModifier,
-            ClassMemberDecl,
-        ],
-        negatives: [],
-    },
-    location: Pos(
-        231,
-    ),
-    line_col: Pos(
-        (
-            11,
-            9,
-        ),
-    ),
-    path: None,
-    line: "        ensures isManager() ==> msg.sender == manager",
-    continued_line: None,
-    parse_attempts: None,
-}
+- Dafny 
+  - TopDecl > ClassDecl 
+    - ClassName > "Lottery"
+    - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "manager"
+      - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "players"
+      - Type > GenericInstantiation > Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > MethodDecl 
+      - Formals > "()"
+      - MethodSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manager"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - ConstAtomExpression > "this"
+          - Suffix > DotSuffix > "address"
+    - ClassMemberDecl > FunctionDecl 
+      - MethodFunctionName > "isManager"
+      - Formals > GIdentType > IdentType 
+        - WildIdent > "caller"
+        - Type > NameSegmentForTypeName > Ident > "address"
+      - FucntionSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression 
+        - LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "isManager"
+          - Suffix > "()"
+        - ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "msg"
+            - Suffix > DotSuffix > "sender"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manager"
+      - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manager"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "msg"
+          - Suffix > DotSuffix > "sender"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manager"
+    - ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "enterPlayerToLottery"
+      - Formals > GIdentType > IdentType 
+        - WildIdent > "player"
+        - Type > NameSegmentForTypeName > Ident > "address"
+      - MethodSpec 
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "player"
+            - Suffix > DotSuffix > "msg"
+            - Suffix > DotSuffix > "value"
+          - RelOp > ">"
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1
+        "
+        - ModifiesClause > FrameExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > "this"
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > EndlessExpression > QuantifierExpression 
+          - QuantifierDomain > IdentTypeOptional > WildIdent > "i"
+          - Expression > EquivExpression > ImpliesExpression > LogicalExpression 
+            - RelationalExpression 
+              - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0 "
+              - RelOp > "<="
+              - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "i"
+              - RelOp > "<"
+              - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+            - RelationalExpression 
+              - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+                - NameSegment > Ident > "players"
+                - Suffix > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "i"
+              - RelOp > "== "
+              - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "player"
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "players"
+            - Suffix 
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "player"
+      - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt 
+        - Lhs > NameSegment > Ident > "players"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+          - AddOp > "+"
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > SeqDisplayExpr > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "player"
+    - ClassMemberDecl > FunctionDecl 
+      - MethodFunctionName > "random"
+      - Formals > "()"
+      - Type > "int"
+      - FucntionSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0 "
+        - RelOp > "<="
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "random"
+          - Suffix > "()"
+        - RelOp > "<"
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+    - ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "pickWinner"
+      - Formals > "()"
+      - MethodSpec 
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+          - RelOp > ">"
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1
+        "
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "isManager"
+          - Suffix > "()"
+        - ModifiesClause > FrameExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > "this"
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "players"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0
+        "
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - ConstAtomExpression > "this"
+            - Suffix > DotSuffix > "balance"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0
+        "
+      - BlockStmt 
+        - Stmt > NonLabeledStmt > VarDeclStatement 
+          - LocalIdentTypeOptional > WildIdent > "index"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "random"
+            - Suffix > "()"
+        - Stmt > NonLabeledStmt > UpdateStmt > Lhs 
+          - NameSegment > Ident > "players"
+          - Suffix > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "index"
+          - Suffix > DotSuffix > "transfer"
+          - Suffix > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - ConstAtomExpression > "this"
+            - Suffix > DotSuffix > "balance"
+  - EOI > ""

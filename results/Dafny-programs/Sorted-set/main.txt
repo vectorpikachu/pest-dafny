@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            PrimaryExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        229,
+        739,
     ),
     line_col: Pos(
         (
-            7,
-            31,
+            24,
+            22,
         ),
     ),
     path: None,
-    line: "predicate isSorted(s: seq<T>) {",
+    line: "class {:autocontracts} BSTNode {",
     continued_line: None,
     parse_attempts: None,
 }

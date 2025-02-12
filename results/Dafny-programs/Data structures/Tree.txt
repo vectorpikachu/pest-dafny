@@ -1,22 +1,26 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        586,
+        947,
     ),
     line_col: Pos(
         (
-            14,
-            1,
+            27,
+            3,
         ),
     ),
     path: None,
-    line: "{",
+    line: "\t\tdecreases |s| - i;",
     continued_line: None,
     parse_attempts: None,
 }

@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            DeclModifier,
-            ClassMemberDecl,
+            Stmt,
         ],
         negatives: [],
     },
     location: Pos(
-        90,
+        1274,
     ),
     line_col: Pos(
         (
-            5,
-            23,
+            45,
+            9,
         ),
     ),
     path: None,
-    line: "    predicate Valid() reads this, Repr {",
+    line: "        new;",
     continued_line: None,
     parse_attempts: None,
 }

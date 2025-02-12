@@ -2,21 +2,22 @@ Error {
     variant: ParsingError {
         positives: [
             DeclModifier,
+            GenericInstantiation,
             ClassMemberDecl,
         ],
         negatives: [],
     },
     location: Pos(
-        1120,
+        4041,
     ),
     line_col: Pos(
         (
-            47,
-            27,
+            143,
+            32,
         ),
     ),
     path: None,
-    line: "        predicate Valid() reads this, Repr",
+    line: "        var underlying: Counter;",
     continued_line: None,
     parse_attempts: None,
 }

@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        416,
+        847,
     ),
     line_col: Pos(
         (
-            10,
-            5,
+            31,
+            21,
         ),
     ),
     path: None,
-    line: "    reads A",
+    line: "        invariant 1 <= i <= N",
     continued_line: None,
     parse_attempts: None,
 }

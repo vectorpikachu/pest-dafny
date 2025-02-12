@@ -1,28 +1,89 @@
-Error {
-    variant: ParsingError {
-        positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
-        ],
-        negatives: [],
-    },
-    location: Pos(
-        322,
-    ),
-    line_col: Pos(
-        (
-            22,
-            6,
-        ),
-    ),
-    path: None,
-    line: "  if a > b then a else b",
-    continued_line: None,
-    parse_attempts: None,
-}
+- Dafny 
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "Max"
+    - Formals 
+      - GIdentType > IdentType 
+        - WildIdent > "a"
+        - Type > "int"
+      - GIdentType > IdentType 
+        - WildIdent > "b"
+        - Type > "int"
+    - Formals > GIdentType > IdentType 
+      - WildIdent > "c"
+      - Type > "int"
+    - MethodSpec 
+      - EnsuresClause > Expression > EquivExpression > ImpliesExpression 
+        - LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+          - RelOp > ">="
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+        - ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "c"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+      - EnsuresClause > Expression > EquivExpression > ImpliesExpression 
+        - LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+          - RelOp > ">="
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+        - ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "c"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+    - BlockStmt > Stmt > NonLabeledStmt > IfStmt 
+      - Guard > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+        - RelOp > ">"
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+      - BlockStmt > Stmt > NonLabeledStmt > ReturnStmt > Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+      - BlockStmt > Stmt > NonLabeledStmt > ReturnStmt > Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "MaxTest"
+    - Formals > "()"
+    - BlockStmt 
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "low"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1"
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "high"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+      - Stmt > NonLabeledStmt > VarDeclStatement 
+        - LocalIdentTypeOptional > WildIdent > "v"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "Max"
+          - Suffix > Expressions 
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "low"
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "high"
+      - Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "v"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "high"
+  - TopDecl > ClassMemberDecl > FunctionDecl 
+    - MethodFunctionName > "max"
+    - Formals 
+      - GIdentType > IdentType 
+        - WildIdent > "a"
+        - Type > "int"
+      - GIdentType > IdentType 
+        - WildIdent > "b"
+        - Type > "int"
+    - Type > "int"
+    - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > EndlessExpression > IfExpression 
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+        - RelOp > ">"
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "maxTest"
+    - Formals > "()"
+    - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+      - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+        - NameSegment > Ident > "max"
+        - Suffix > Expressions 
+          - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1"
+          - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+      - RelOp > "== "
+      - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+  - EOI > ""

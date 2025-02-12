@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        204,
+        229,
     ),
     line_col: Pos(
         (
-            12,
-            15,
+            13,
+            18,
         ),
     ),
     path: None,
-    line: "        match this {",
+    line: "            case Var(x) => x",
     continued_line: None,
     parse_attempts: None,
 }

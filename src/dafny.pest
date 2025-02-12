@@ -1,3 +1,8 @@
+// TODO: Remove the WHITESPACE from the rules
+// We should always manually add WHITESPACE to the rule.
+// For the rest of this document, we consider Dafny programs as sequences of tokens.
+// But in PEG, the greedy match will always match the longest token.
+// Add Spacing!
 // Character Classes
 letter        = _{ ASCII_ALPHA }
 digit         = _{ ASCII_DIGIT }
@@ -119,7 +124,7 @@ reservedword = _{
 // which prevents the parser from matching the ident.
 // Or rather, trailing with a special ch.
 // Failed because of the greedy match and WHITESPECES here.
-ident = _{ !(charToken | reservedword ~ nonidchar) ~ nondigitIdChar ~ idchar* }
+ident = _{ !(charToken | reservedword ~ !idchar) ~ nondigitIdChar ~ idchar* ~ whitespace* }
 
 digits        = _{ digit ~ ("_"? ~ digit)* }
 hexdigits     = _{ "0x" ~ hexdigit ~ ("_"? ~ hexdigit)* }
@@ -185,10 +190,12 @@ FormalsOptionalIds     = {
 Nat = { digits | hexdigits }
 Dec = { decimaldigits }
 
-WHITESPACE = _{ space | tab | cr | lf }
+// WHITESPACE = _{ space | tab | cr | lf }
+whitespace = _{ space | tab | cr | lf }
 
 // Programs
-Dafny             =  { SOI ~ IncludeDirective_* ~ TopDecl* ~ EOI }
+// TODO:
+Dafny             =  { SOI ~ whitespace* ~ IncludeDirective_* ~ whitespace* ~ TopDecl* ~ whitespace* ~ EOI }
 // If I add a SOI and EOI here, it will cause strange errors. Don't know why.
 IncludeDirective_ = _{ "include" ~ stringToken }
 TopDecl           =  {
@@ -245,7 +252,8 @@ ReadsClause                 =  {
     "reads" ~ Attribute? ~ PossiblyWildFrameExpression ~ ("," ~ PossiblyWildFrameExpression)*
 }
 ModifiesClause              =  { "modifies" ~ Attribute? ~ FrameExpression ~ ("," ~ FrameExpression)* }
-InvariantClause_            = _{ "invariant" ~ Attribute* ~ Expression }
+InvariantClause             =  { "invariant" ~ whitespace* ~ Attribute* ~ whitespace* ~ Expression }
+//TODO: goes here
 
 // Make all specs not empty, and add a ? to the rule that use them
 MethodSpec = {
@@ -265,7 +273,7 @@ IteratorSpec = {
 }
 
 LoopSpec = {
-    (InvariantClause_ | DecreasesClause | ModifiesClause)+
+    (InvariantClause | DecreasesClause | ModifiesClause)+
 }
 
 // Types

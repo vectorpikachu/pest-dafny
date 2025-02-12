@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        275,
+        285,
     ),
     line_col: Pos(
         (
-            12,
-            9,
+            13,
+            8,
         ),
     ),
     path: None,
-    line: "  match t",
+    line: "  case Node(n, children) => Tree.Node(n+1, ForestInc(children))",
     continued_line: None,
     parse_attempts: None,
 }

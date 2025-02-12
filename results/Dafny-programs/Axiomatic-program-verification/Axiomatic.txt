@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        761,
+        798,
     ),
     line_col: Pos(
         (
-            24,
-            8,
+            26,
+            10,
         ),
     ),
     path: None,
-    line: "\tmatch tree",
+    line: "    case Node(l_tree,r_tree,v) => Cons(v,append(flatten(l_tree),flatten(r_tree)))",
     continued_line: None,
     parse_attempts: None,
 }

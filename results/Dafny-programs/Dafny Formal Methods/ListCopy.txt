@@ -2,27 +2,21 @@ Error {
     variant: ParsingError {
         positives: [
             GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            Attribute,
         ],
         negatives: [],
     },
     location: Pos(
-        399,
+        676,
     ),
     line_col: Pos(
         (
-            19,
-            20,
+            27,
+            30,
         ),
     ),
     path: None,
-    line: "    assume (forall o: Node :: o in existingRegion && o.nxt != null ==> o.nxt in existingRegion);",
+    line: "      newRegion := newRegion + {newRoot};",
     continued_line: None,
     parse_attempts: None,
 }

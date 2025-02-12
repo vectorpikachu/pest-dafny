@@ -2,21 +2,32 @@ Error {
     variant: ParsingError {
         positives: [
             DeclModifier,
+            RequiresClause,
+            EnsuresClause,
+            DecreasesClause,
+            ModifiesClause,
             ClassMemberDecl,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        240,
+        2227,
     ),
     line_col: Pos(
         (
-            12,
-            5,
+            73,
+            31,
         ),
     ),
     path: None,
-    line: "    reads this, Repr ",
+    line: "        ensures Repr == {this};",
     continued_line: None,
     parse_attempts: None,
 }

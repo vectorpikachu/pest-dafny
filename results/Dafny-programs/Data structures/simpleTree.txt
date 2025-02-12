@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        154,
+        203,
     ),
     line_col: Pos(
         (
-            5,
-            1,
+            8,
+            10,
         ),
     ),
     path: None,
-    line: "{",
+    line: "    case Node(left, x, right) =>",
     continued_line: None,
     parse_attempts: None,
 }

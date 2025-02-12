@@ -1,28 +1,87 @@
-Error {
-    variant: ParsingError {
-        positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
-        ],
-        negatives: [],
-    },
-    location: Pos(
-        75,
-    ),
-    line_col: Pos(
-        (
-            4,
-            8,
-        ),
-    ),
-    path: None,
-    line: "    if n == 0 then 1 else a * power(a, n - 1)",
-    continued_line: None,
-    parse_attempts: None,
-}
+- Dafny 
+  - TopDecl > ClassMemberDecl > FunctionDecl 
+    - MethodFunctionName > "power"
+    - Formals 
+      - GIdentType > IdentType 
+        - WildIdent > "a"
+        - Type > "int"
+      - GIdentType > IdentType 
+        - WildIdent > "n"
+        - Type > "nat"
+    - Type > "int"
+    - FucntionSpec > RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+      - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+      - RelOp > ">="
+      - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0
+"
+    - FunctionBody > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > EndlessExpression > IfExpression 
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0 "
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1 "
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor 
+        - BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+        - MulOp > "*"
+        - BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "power"
+          - Suffix > Expressions 
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+              - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+              - AddOp > "-"
+              - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "1"
+  - TopDecl > ClassMemberDecl > MethodDecl 
+    - MethodFunctionName > "last"
+    - Formals 
+      - GIdentType > IdentType 
+        - WildIdent > "n"
+        - Type > "nat"
+      - GIdentType > IdentType 
+        - WildIdent > "a"
+        - Type > "nat"
+      - GIdentType > IdentType 
+        - WildIdent > "b"
+        - Type > "nat"
+      - GIdentType > IdentType 
+        - WildIdent > "c"
+        - Type > "nat"
+    - Formals > GIdentType > IdentType 
+      - WildIdent > "res"
+      - Type > "bool"
+    - MethodSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression 
+      - LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - RelOp > ">"
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "2 "
+      - ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "res"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > "false"
+    - BlockStmt > Stmt > NonLabeledStmt > IfStmt 
+      - Guard > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > ParensExpression > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term 
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "power"
+            - Suffix > Expressions 
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "a"
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+          - AddOp > "+"
+          - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "power"
+            - Suffix > Expressions 
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "b"
+              - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "power"
+          - Suffix > Expressions 
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "c"
+            - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "n"
+      - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt 
+        - Lhs > NameSegment > Ident > "res"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > "true"
+      - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt 
+        - Lhs > NameSegment > Ident > "res"
+        - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > "false"
+  - EOI > ""

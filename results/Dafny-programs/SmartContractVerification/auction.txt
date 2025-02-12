@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            DeclModifier,
-            ClassMemberDecl,
+            Stmt,
         ],
         negatives: [],
     },
     location: Pos(
-        257,
+        623,
     ),
     line_col: Pos(
         (
-            15,
-            5,
+            26,
+            7,
         ),
     ),
     path: None,
-    line: "    reads this",
+    line: "      new;",
     continued_line: None,
     parse_attempts: None,
 }

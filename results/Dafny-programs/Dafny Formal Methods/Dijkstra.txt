@@ -1,22 +1,22 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            Hints_,
+            CalcOp,
         ],
         negatives: [],
     },
     location: Pos(
-        457,
+        893,
     ),
     line_col: Pos(
         (
-            13,
-            1,
+            31,
+            5,
         ),
     ),
     path: None,
-    line: "{",
+    line: "    }",
     continued_line: None,
     parse_attempts: None,
 }

@@ -1,28 +1,26 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
             RelOp,
             ShiftOp,
             AddOp,
             MulOp,
             BVOp,
-            HashCall,
             Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        180,
+        229,
     ),
     line_col: Pos(
         (
-            7,
-            6,
+            10,
+            1,
         ),
     ),
     path: None,
-    line: "  if s == t then 0 else Sum(a, s, t-1) + a[t-1]",
+    line: "method MaxSegSum(a: seq<int>) returns (k: int, m: int)",
     continued_line: None,
     parse_attempts: None,
 }

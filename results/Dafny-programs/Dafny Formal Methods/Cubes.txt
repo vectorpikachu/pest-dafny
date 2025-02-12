@@ -1,35 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
-            RequiresClause,
-            EnsuresClause,
-            DecreasesClause,
-            ModifiesClause,
-            GenericInstantiation,
-            BlockStmt,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
             Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        153,
+        296,
     ),
     line_col: Pos(
         (
-            6,
-            18,
+            13,
+            17,
         ),
     ),
     path: None,
-    line: "  ensures forall i :: 0 <= i < a.Length ==> a[i] == i*i*i",
+    line: "    invariant 0 <= n <= a.Length",
     continued_line: None,
     parse_attempts: None,
 }

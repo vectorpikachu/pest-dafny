@@ -1,22 +1,32 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            ellipsis,
+            LoopSpec,
+            GenericInstantiation,
+            Stmt,
+            BlockStmt,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            HashCall,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        205,
+        603,
     ),
     line_col: Pos(
         (
-            7,
-            5,
+            26,
+            19,
         ),
     ),
     path: None,
-    line: "    reads A",
+    line: "        invariant multiset(A[..]) == multiset(old(A[..]))",
     continued_line: None,
     parse_attempts: None,
 }

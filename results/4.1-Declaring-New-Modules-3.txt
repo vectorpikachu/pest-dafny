@@ -9,7 +9,7 @@
           - Formals > "()"
           - BlockStmt > Stmt > NonLabeledStmt > UpdateStmt 
             - Lhs 
-              - NameSegment > Ident > "this"
+              - ConstAtomExpression > "this"
               - Suffix > DotSuffix > "f"
             - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "3"
         - ClassMemberDecl > MethodDecl 

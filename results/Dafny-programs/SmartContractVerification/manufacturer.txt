@@ -1,22 +1,259 @@
-Error {
-    variant: ParsingError {
-        positives: [
-            DeclModifier,
-            ClassMemberDecl,
-        ],
-        negatives: [],
-    },
-    location: Pos(
-        357,
-    ),
-    line_col: Pos(
-        (
-            20,
-            9,
-        ),
-    ),
-    path: None,
-    line: "        ensures this.msg.sender == msg.sender == manufacturer",
-    continued_line: None,
-    parse_attempts: None,
-}
+- Dafny 
+  - TopDecl > ClassDecl 
+    - ClassName > "ProductFactory"
+    - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "deployedProducts"
+      - Type > GenericInstantiation > Type > NameSegmentForTypeName > Ident > "address"
+  - TopDecl > ClassDecl 
+    - ClassName > "Manufacturer"
+    - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "manufacturer"
+      - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "product"
+      - Type > NameSegmentForTypeName > Ident > "Product"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "retailers"
+      - Type > GenericInstantiation > Type > NameSegmentForTypeName > Ident > "Retailer"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "retailersAddresses"
+      - Type > GenericInstantiation > Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FunctionDecl 
+      - MethodFunctionName > "isProducer"
+      - Formals > GIdentType > IdentType 
+        - WildIdent > "msg"
+        - Type > NameSegmentForTypeName > Ident > "Message"
+      - FucntionSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - ConstAtomExpression > "this"
+          - Suffix > DotSuffix > "msg"
+          - Suffix > DotSuffix > "sender"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "msg"
+          - Suffix > DotSuffix > "sender"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manufacturer"
+    - ClassMemberDecl > MethodDecl 
+      - Formals 
+        - GIdentType > IdentType 
+          - WildIdent > "name"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "code"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "quantity"
+          - Type > "nat"
+        - GIdentType > IdentType 
+          - WildIdent > "price"
+          - Type > "nat"
+        - GIdentType > IdentType 
+          - WildIdent > "supplier"
+          - Type > NameSegmentForTypeName > Ident > "address"
+        - GIdentType > IdentType 
+          - WildIdent > "creator"
+          - Type > NameSegmentForTypeName > Ident > "address"
+      - MethodSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "manufacturer"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "creator"
+    - ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "createNewProduct"
+      - Formals 
+        - GIdentType > IdentType 
+          - WildIdent > "name"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "code"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "quantity"
+          - Type > "nat"
+        - GIdentType > IdentType 
+          - WildIdent > "price"
+          - Type > "nat"
+        - GIdentType > IdentType 
+          - WildIdent > "supplier"
+          - Type > NameSegmentForTypeName > Ident > "address"
+      - MethodSpec 
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression 
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "name"
+            - RelOp > "!= "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > """"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "code"
+            - RelOp > "!= "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > """"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantity"
+            - RelOp > "!= "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0 "
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "price"
+            - RelOp > "!= "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "0 "
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "supplier"
+            - RelOp > "!= "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > "null"
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression 
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "product"
+              - Suffix > DotSuffix > "productName"
+            - RelOp > "== "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "name"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "product"
+              - Suffix > DotSuffix > "productCode"
+            - RelOp > "== "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "code"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "product"
+              - Suffix > DotSuffix > "minimumQuantity"
+            - RelOp > "== "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantity"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "product"
+              - Suffix > DotSuffix > "priceOfOne"
+            - RelOp > "== "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "price"
+          - RelationalExpression 
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "product"
+              - Suffix > DotSuffix > "supplierAddress"
+            - RelOp > "== "
+            - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "supplier"
+      - BlockStmt 
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "productName"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "name"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "productCode"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "code"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "minimumQuantity"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantity"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "priceOfOne"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "price"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "supplierAddress"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "supplier"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "created"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > "true"
+    - ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "orderAProduct"
+      - Formals 
+        - GIdentType > IdentType 
+          - WildIdent > "quantity"
+          - Type > "nat"
+        - GIdentType > IdentType 
+          - WildIdent > "retailerName"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "caller"
+          - Type > NameSegmentForTypeName > Ident > "address"
+      - MethodSpec 
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "product"
+          - Suffix > DotSuffix > "created"
+        - RequiresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+            - NameSegment > Ident > "product"
+            - Suffix > DotSuffix > "minimumQuantity"
+          - RelOp > "<="
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantity"
+        - EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "balance"
+          - RelOp > "== "
+          - ShiftTerm > Term 
+            - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "balance"
+            - AddOp > "+"
+            - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+              - NameSegment > Ident > "caller"
+              - Suffix > DotSuffix > "msg"
+              - Suffix > DotSuffix > "value"
+      - BlockStmt 
+        - Stmt > NonLabeledStmt > VarDeclStatement 
+          - LocalIdentTypeOptional > WildIdent > "retailer"
+          - Rhs 
+            - Type > NameSegmentForTypeName > Ident > "Retailer"
+            - ActualBindings 
+              - ActualBinding > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "retailerName"
+              - ActualBinding > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantity"
+        - Stmt > NonLabeledStmt > UpdateStmt 
+          - Lhs > NameSegment > Ident > "retailers"
+          - Rhs > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term 
+            - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "retailers"
+            - AddOp > "+"
+            - Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > SeqDisplayExpr > Expressions > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "retailer"
+  - TopDecl > ClassDecl 
+    - ClassName > "Retailer"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "retailer"
+      - Type > "string"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "quantityOrdered"
+      - Type > "nat"
+    - ClassMemberDecl > MethodDecl 
+      - Formals 
+        - GIdentType > IdentType 
+          - WildIdent > "r"
+          - Type > "string"
+        - GIdentType > IdentType 
+          - WildIdent > "q"
+          - Type > "nat"
+      - MethodSpec > EnsuresClause > Expression > EquivExpression > ImpliesExpression > LogicalExpression 
+        - RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "retailer"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "r"
+        - RelationalExpression 
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "quantityOrdered"
+          - RelOp > "== "
+          - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > NameSegment > Ident > "q"
+  - TopDecl > TraitDecl 
+    - ClassName > "Product"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "productName"
+      - Type > "string"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "productCode"
+      - Type > "string"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "created"
+      - Type > "bool"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "minimumQuantity"
+      - Type > "nat"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "priceOfOne"
+      - Type > "nat"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "supplierAddress"
+      - Type > NameSegmentForTypeName > Ident > "address"
+    - ClassMemberDecl > FieldDecl > FIdentType 
+      - NoUSIdentOrDigits > "processed"
+      - Type > "bool"
+  - EOI > ""

@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        36,
+        469,
     ),
     line_col: Pos(
         (
-            2,
-            4,
+            14,
+            19,
         ),
     ),
     path: None,
-    line: "   requires a != null",
+    line: "      invariant 0 <= low <= high <= a.Length",
     continued_line: None,
     parse_attempts: None,
 }

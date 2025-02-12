@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            GenericInstantiation,
         ],
         negatives: [],
     },
     location: Pos(
-        56,
+        168,
     ),
     line_col: Pos(
         (
-            2,
-            55,
+            6,
+            50,
         ),
     ),
     path: None,
-    line: "predicate Extends<K, V>(m1: map<K, V>, m2: map<K, V>) {",
+    line: "predicate UndefOn<K(!new), V>(m: map<K, V>, p: K -> bool) {",
     continued_line: None,
     parse_attempts: None,
 }

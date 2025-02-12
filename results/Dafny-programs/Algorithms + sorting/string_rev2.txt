@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        65,
+        646,
     ),
     line_col: Pos(
         (
-            2,
-            5,
+            24,
+            21,
         ),
     ),
     path: None,
-    line: "    reads s, r",
+    line: "        invariant 0 <= i <= s.Length",
     continued_line: None,
     parse_attempts: None,
 }

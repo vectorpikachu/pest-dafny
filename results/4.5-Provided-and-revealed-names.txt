@@ -1,22 +1,23 @@
-Error {
-    variant: ParsingError {
-        positives: [
-            ellipsis,
-            TopDecl,
-        ],
-        negatives: [],
-    },
-    location: Pos(
-        29,
-    ),
-    line_col: Pos(
-        (
-            2,
-            19,
-        ),
-    ),
-    path: None,
-    line: "  export provides a",
-    continued_line: None,
-    parse_attempts: None,
-}
+- Dafny 
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "A"
+    - TopDecl > SubModuleDecl > ModuleExport > ExportSignature > TypeNameOrCtorSuffix > "a"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "a"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+    - TopDecl > ClassMemberDecl > ConstantFieldDecl 
+      - CIdentType > NoUSIdentOrDigits > "b"
+      - Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression > ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "20"
+  - TopDecl > SubModuleDecl > ModuleDefinition 
+    - QualifiedModuleName > "B"
+    - TopDecl > SubModuleDecl > ModuleImport > QualifiedModuleExport > QualifiedModuleName > "A"
+    - TopDecl > ClassMemberDecl > MethodDecl 
+      - MethodFunctionName > "m"
+      - Formals > "()"
+      - BlockStmt > Stmt > NonLabeledStmt > AssertStmt > Expression > EquivExpression > ImpliesExpression > LogicalExpression > RelationalExpression 
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression 
+          - NameSegment > Ident > "A"
+          - Suffix > DotSuffix > "a"
+        - RelOp > "== "
+        - ShiftTerm > Term > Factor > BitvectorFactor > AsExpression > UnaryExpression > PrimaryExpression > ConstAtomExpression > LiteralExpression > Nat > "10"
+  - EOI > ""

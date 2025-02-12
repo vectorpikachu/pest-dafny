@@ -1,26 +1,24 @@
 Error {
     variant: ParsingError {
         positives: [
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
+            GenericInstantiation,
+            HashCall,
             Suffix,
+            Attribute,
         ],
         negatives: [],
     },
     location: Pos(
-        93,
+        273,
     ),
     line_col: Pos(
         (
-            4,
-            12,
+            15,
+            15,
         ),
     ),
     path: None,
-    line: "\tif (N==0) then 1 else A * power(A,N-1)",
+    line: "\t\tinvariant x == power(A, (N-i))",
     continued_line: None,
     parse_attempts: None,
 }

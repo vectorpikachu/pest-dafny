@@ -1,22 +1,26 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
+            RelOp,
+            ShiftOp,
+            AddOp,
+            MulOp,
+            BVOp,
+            Suffix,
         ],
         negatives: [],
     },
     location: Pos(
-        61,
+        139,
     ),
     line_col: Pos(
         (
-            2,
-            5,
+            4,
+            55,
         ),
     ),
     path: None,
-    line: "    requires |s| == |r|",
+    line: "    forall i :: 0 <= i < |s| ==> s[i] == r[|s| - i - 1]",
     continued_line: None,
     parse_attempts: None,
 }

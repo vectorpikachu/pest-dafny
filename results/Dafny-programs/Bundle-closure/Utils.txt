@@ -13,16 +13,16 @@ Error {
         negatives: [],
     },
     location: Pos(
-        136,
+        206,
     ),
     line_col: Pos(
         (
-            5,
-            13,
+            7,
+            23,
         ),
     ),
     path: None,
-    line: "    ensures forall i :: 0 <= i < |s| ==> a[i] == s[i]",
+    line: "    a := new T[|s|](i requires 0 <= i < |s| => s[i]);",
     continued_line: None,
     parse_attempts: None,
 }

@@ -1,22 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            DeclModifier,
-            ClassMemberDecl,
+            Type,
         ],
         negatives: [],
     },
     location: Pos(
-        369,
+        1368,
     ),
     line_col: Pos(
         (
-            12,
-            5,
+            58,
+            20,
         ),
     ),
     path: None,
-    line: "    reads this, Repr",
+    line: "      invariant i <= k && MostlyValid()",
     continued_line: None,
     parse_attempts: None,
 }

@@ -1,35 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            EOI,
-            TopDecl,
-            RequiresClause,
-            EnsuresClause,
-            DecreasesClause,
-            ModifiesClause,
-            GenericInstantiation,
-            BlockStmt,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            Type,
         ],
         negatives: [],
     },
     location: Pos(
-        161,
+        320,
     ),
     line_col: Pos(
         (
-            6,
+            11,
             18,
         ),
     ),
     path: None,
-    line: "  ensures forall i,j :: 0 <= i < m.Length0 && 0 <= j < m.Length1 ==>",
+    line: "    invariant a <= m.Length0",
     continued_line: None,
     parse_attempts: None,
 }

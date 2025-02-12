@@ -1,28 +1,21 @@
 Error {
     variant: ParsingError {
         positives: [
-            GenericInstantiation,
-            RelOp,
-            ShiftOp,
-            AddOp,
-            MulOp,
-            BVOp,
-            HashCall,
-            Suffix,
+            LiteralExpression,
         ],
         negatives: [],
     },
     location: Pos(
-        262,
+        289,
     ),
     line_col: Pos(
         (
-            11,
-            9,
+            13,
+            8,
         ),
     ),
     path: None,
-    line: "  match l",
+    line: "  case Cons(x, xs) => 1 + length(xs)",
     continued_line: None,
     parse_attempts: None,
 }
